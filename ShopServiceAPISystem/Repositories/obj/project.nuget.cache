@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qTXcNMCGbBsc879UWimXqNtbIwtlXqBpDDba41EVUn3/hdlp70BTPi1dP7fXursEF7xoaT6+zW8XcWupudEzJg==",
+  "dgSpecHash": "jiMTFwdW2q1+m0ZPfEJnoqyvI7A/P1OPU1JW+c8HAvVx1pK76lTMgJRPCT2Gyzb+6PJk0XnjwA8HaUz65qly7Q==",
   "success": true,
-  "projectFilePath": "D:\\FPT\\PRN231\\PRN231_Projects\\ShopServiceAPISystem\\ShopServiceAPISystem\\Repositories\\Repositories.csproj",
+  "projectFilePath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\Repositories\\Repositories.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

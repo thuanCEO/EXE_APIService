@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EU0AVKKDWXV8YLiJllJq6z46Aa3EJ8rbFzkQk2WA+kC4Ey1a4segn76XVlTbb2LPv8a5cjZ9s6MrTx5223daxQ==",
+  "dgSpecHash": "PnZCG4J/j0SBm/HViUwQqy/MniccHbkLTkCb7W3rc/vYBuE9UluMkJ7Rb6auRjp/F9ty8Q1pymx/VDlkZZI/CQ==",
   "success": true,
-  "projectFilePath": "D:\\FPT\\PRN231\\PRN231_Projects\\ShopServiceAPISystem\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
+  "projectFilePath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataAccessObjects
-build_property.ProjectDir = D:\FPT\PRN231\PRN231_Projects\ShopServiceAPISystem\ShopServiceAPISystem\DataAccessObjects\
+build_property.ProjectDir = D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\DataAccessObjects\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,0 +1,15 @@
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.deps.json
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.dll
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.pdb
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.AssemblyReference.cache
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfoInputs.cache
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfo.cs
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.CoreCompileInputs.cache
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.sourcelink.json
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.dll
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\refint\BusinessObjects.dll
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.runtimeconfig.json
+D:\FPT\EXE101_201\FE\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
