@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BusinessObjects.Models
+namespace DataAccessObjects.Models
 {
-    public partial class Shipping
+    public partial class Voucher
     {
-        public Shipping()
+        public Voucher()
         {
             Orders = new HashSet<Order>();
         }
 
         public int Id { get; set; }
-        public string MethodName { get; set; }
         public string Description { get; set; }
-        public double? ShipFee { get; set; }
+        public double? Discount { get; set; }
         public int? Status { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }

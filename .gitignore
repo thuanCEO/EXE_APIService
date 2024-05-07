@@ -1,0 +1,15 @@
+# Bỏ qua các thư mục biên dịch
+bin/
+obj/
+
+# Bỏ qua các tệp người dùng cá nhân
+*.user
+
+# Bỏ qua các tệp cấu hình IDE
+.vs/
+
+# Bỏ qua các tệp nhật ký
+*.log
+
+# Bỏ qua các tệp tạm thời
+*.tmp
