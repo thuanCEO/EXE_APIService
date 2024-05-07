@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8V8E7Alu4xBBwnbe/rh+KN110WqnL8tY2rhbxqYCSVF5SA6AOCY8UfI4ouVdLOMP3PwEcEbjLuqeTNpTZ4yzHA==",
+  "dgSpecHash": "Vtx3xx39jA72FcL8ZznwnNmGQt7KONE5ZUYz2l7NDeSoQT10oj4+STfZgEYJdSljskeXNSrxYAzudgoMoB2Zrg==",
   "success": true,
-  "projectFilePath": "D:\\FPT\\PRN231\\PRN231_Projects\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
+  "projectFilePath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THUAN\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\THUAN\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
