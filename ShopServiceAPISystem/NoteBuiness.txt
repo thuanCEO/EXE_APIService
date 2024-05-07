@@ -1,0 +1,3 @@
+BusinessObjects : chứa các model (entity)
+DataAccessObjects: chứa các hàm method DAO 
+Repositories: chứa  Interfaces(IRepositories) và các Implements (Implements chứa các Repo)

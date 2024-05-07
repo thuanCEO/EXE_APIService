@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8V8E7Alu4xBBwnbe/rh+KN110WqnL8tY2rhbxqYCSVF5SA6AOCY8UfI4ouVdLOMP3PwEcEbjLuqeTNpTZ4yzHA==",
+  "success": true,
+  "projectFilePath": "D:\\FPT\\PRN231\\PRN231_Projects\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\THUAN\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\THUAN\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\THUAN\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\THUAN\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\THUAN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\THUAN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
