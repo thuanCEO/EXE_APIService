@@ -1,3 +1,10 @@
+using BusinessObjects;
+using DataAccessObjects.Implementation;
+using DataAccessObjects.Interfaces;
+using DataAccessObjects.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 namespace ShopServiceAPISystem
 {
     public class Program
@@ -12,6 +19,12 @@ namespace ShopServiceAPISystem
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<IUserRepository,UserRepository>();
+            builder.Services.AddScoped<UserBLL>();
+            string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>
+            options.UseMySQL(connectionString));
 
             var app = builder.Build();
 

@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopServiceAPISystem", "ShopServiceAPISystem\ShopServiceAPISystem.csproj", "{D8AA3512-F450-482A-8D56-1129BD157C63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopServiceAPISystem", "ShopServiceAPISystem\ShopServiceAPISystem.csproj", "{D8AA3512-F450-482A-8D56-1129BD157C63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessObjects", "DataAccessObjects\DataAccessObjects.csproj", "{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessObjects", "DataAccessObjects\DataAccessObjects.csproj", "{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{10C17D0F-6CB2-4692-A7F1-50C5DE5137D2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{F69878CC-BB2C-4D71-8278-BA0FD5133535}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{10C17D0F-6CB2-4692-A7F1-50C5DE5137D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{10C17D0F-6CB2-4692-A7F1-50C5DE5137D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C17D0F-6CB2-4692-A7F1-50C5DE5137D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C17D0F-6CB2-4692-A7F1-50C5DE5137D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F69878CC-BB2C-4D71-8278-BA0FD5133535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F69878CC-BB2C-4D71-8278-BA0FD5133535}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F69878CC-BB2C-4D71-8278-BA0FD5133535}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F69878CC-BB2C-4D71-8278-BA0FD5133535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
