@@ -14,5 +14,6 @@ namespace DataAccessObjects.Interfaces
         public void AddUser(User user);
         public void UpdateUser(User user);
         public void DeleteUser(int id);
+        public string GenerateToken(User user);
     }
 }

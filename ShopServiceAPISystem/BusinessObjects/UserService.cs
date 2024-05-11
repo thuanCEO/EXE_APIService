@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    public class UserBLL
+    public class UserService
     {
         private IUserRepository _userRepository;
 
-        public UserBLL(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
@@ -25,6 +25,11 @@ namespace BusinessObjects
         public User GetUserByUserNameAndPassword(string userName, string password)
         {
             return _userRepository.GetUserByUserNameAndPassword(userName, password);
+        }
+
+        public string GenerateToken(User user)
+        {
+            return _userRepository.GenerateToken(user);
         }
     }
 }

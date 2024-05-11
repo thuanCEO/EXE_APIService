@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,30 +10,32 @@ namespace ShopServiceAPISystem.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private UserBLL _BLL;
-        public UserController(UserBLL BLL)
+        private UserService _userService;
+        public UserController(UserService userService)
         {
-            _BLL = BLL;
+            _userService = userService;
         }
 
         [HttpGet]
-        [Route("getAllUsers")]
-        public List<User> GetAllUsers()
+        [Route("GetAllUsers")]
+        public IActionResult GetAllUsers()
         {
-            return _BLL.GetAllUsers();
+            return Ok(_userService.GetAllUsers());
         }
 
-        [HttpGet]
-        [Route("getUserByUserNameAndPassword")]
-        public IActionResult GetUserByUserNameAndPassword(string userName, string password)
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login(string userName, string password)
         {
-            User user = _BLL.GetUserByUserNameAndPassword(userName, password);
+            User user = _userService.GetUserByUserNameAndPassword(userName, password);
             if (user == null)
             {
                 return NotFound("Invalid username or password");
             }
-            return Ok(user);
+
+            return Ok(_userService.GenerateToken(user));
         }
+
 
     }
 }

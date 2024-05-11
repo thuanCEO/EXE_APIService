@@ -2,8 +2,11 @@ using BusinessObjects;
 using DataAccessObjects.Implementation;
 using DataAccessObjects.Interfaces;
 using DataAccessObjects.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Configuration;
+using System.Text;
 
 namespace ShopServiceAPISystem
 {
@@ -20,11 +23,34 @@ namespace ShopServiceAPISystem
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            //Add service
             builder.Services.AddScoped<IUserRepository,UserRepository>();
-            builder.Services.AddScoped<UserBLL>();
+            builder.Services.AddScoped<UserService>();
+
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>
             options.UseMySQL(connectionString));
+
+
+            //JWT
+            var secretKey = builder.Configuration["AppSettings:SecretKey"];
+            var secretKeyByte = Encoding.UTF8.GetBytes(secretKey);
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+            {
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKeyByte),
+
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
 
             var app = builder.Build();
 
@@ -36,6 +62,8 @@ namespace ShopServiceAPISystem
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
