@@ -1,12 +1,7 @@
-﻿using DataAccessObjects.Interfaces;
-using DataAccessObjects.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessObjects.Models;
+using Repository.Interfaces;
 
-namespace BusinessObjects
+namespace Service
 {
     public class UserService
     {
@@ -22,9 +17,9 @@ namespace BusinessObjects
             return _userRepository.GetAllUser();
         }
 
-        public User GetUserByUserNameAndPassword(string userName, string password)
+        public User Login(string userName, string password)
         {
-            return _userRepository.GetUserByUserNameAndPassword(userName, password);
+            return _userRepository.Login(userName, password);
         }
 
         public string GenerateToken(User user)

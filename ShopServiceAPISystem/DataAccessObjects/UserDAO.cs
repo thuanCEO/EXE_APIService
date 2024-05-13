@@ -1,22 +1,17 @@
-﻿using DataAccessObjects.Interfaces;
-using DataAccessObjects.Models;
+﻿using BusinessObjects.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace DataAccessObjects.Implementation
+namespace DataAccessObjects
 {
-    public class UserRepository : IUserRepository
+    public class UserDAO
     {
         private readonly bs6ow0djyzdo8teyhoz4Context _context;
         private readonly IConfiguration _configuration;
-        public UserRepository(bs6ow0djyzdo8teyhoz4Context context, IConfiguration configuration)
+        public UserDAO(bs6ow0djyzdo8teyhoz4Context context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
@@ -43,7 +38,7 @@ namespace DataAccessObjects.Implementation
             return _context.Users.ToList();
         }
 
-        public User GetUserByUserNameAndPassword(string userName, string password)
+        public User Login(string userName, string password)
         {
 
             return _context.Users.FirstOrDefault(x => x.UserName.Equals(userName) && x.Password.Equals(password));

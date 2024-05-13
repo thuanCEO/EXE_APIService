@@ -1,8 +1,6 @@
-﻿using BusinessObjects;
-using DataAccessObjects.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using BusinessObjects.Models;
 using Microsoft.AspNetCore.Mvc;
+using Service;
 
 namespace ShopServiceAPISystem.Controllers
 {
@@ -27,7 +25,7 @@ namespace ShopServiceAPISystem.Controllers
         [Route("Login")]
         public IActionResult Login(string userName, string password)
         {
-            User user = _userService.GetUserByUserNameAndPassword(userName, password);
+            User user = _userService.Login(userName, password);
             if (user == null)
             {
                 return NotFound("Invalid username or password");

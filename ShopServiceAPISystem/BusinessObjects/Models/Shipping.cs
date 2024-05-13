@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DataAccessObjects.Models
+﻿namespace BusinessObjects.Models
 {
-    public partial class Payment
+    public partial class Shipping
     {
-        public Payment()
+        public Shipping()
         {
             Orders = new HashSet<Order>();
         }
@@ -13,6 +10,7 @@ namespace DataAccessObjects.Models
         public int Id { get; set; }
         public string MethodName { get; set; }
         public string Description { get; set; }
+        public double? ShipFee { get; set; }
         public int? Status { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }

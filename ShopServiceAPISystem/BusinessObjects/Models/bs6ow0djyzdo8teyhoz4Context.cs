@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace DataAccessObjects.Models
+namespace BusinessObjects.Models
 {
     public partial class bs6ow0djyzdo8teyhoz4Context : DbContext
     {
@@ -31,14 +28,14 @@ namespace DataAccessObjects.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
 
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//                optionsBuilder.UseMySQL("Server=bs6ow0djyzdo8teyhoz4-mysql.services.clever-cloud.com;Uid=umt8qsls0erkt8ew;Pwd=SofegWccn2jSVc6m15Kl;Database=bs6ow0djyzdo8teyhoz4");
-//            }
-//        }
+        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //        {
+        //            if (!optionsBuilder.IsConfigured)
+        //            {
+        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        //                optionsBuilder.UseMySQL("Server=bs6ow0djyzdo8teyhoz4-mysql.services.clever-cloud.com;Uid=umt8qsls0erkt8ew;Pwd=SofegWccn2jSVc6m15Kl;Database=bs6ow0djyzdo8teyhoz4");
+        //            }
+        //        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

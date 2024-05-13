@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DataAccessObjects.Models
+﻿namespace BusinessObjects.Models
 {
     public partial class OrderDetail
     {

@@ -1,11 +1,11 @@
-using BusinessObjects;
-using DataAccessObjects.Implementation;
-using DataAccessObjects.Interfaces;
-using DataAccessObjects.Models;
+using BusinessObjects.Models;
+using DataAccessObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Configuration;
+using Repository.Implementation;
+using Repository.Interfaces;
+using Service;
 using System.Text;
 
 namespace ShopServiceAPISystem
@@ -25,7 +25,8 @@ namespace ShopServiceAPISystem
 
 
             //Add service
-            builder.Services.AddScoped<IUserRepository,UserRepository>();
+            builder.Services.AddScoped<UserDAO>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<UserService>();
 
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
