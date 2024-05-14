@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 
@@ -34,6 +35,21 @@ namespace ShopServiceAPISystem.Controllers
             return Ok(_userService.GenerateToken(user));
         }
 
+        [HttpPost]
+        [Route("CreateUser")]
+        public IActionResult Create([FromBody] UserDTO userDTO)
+        {
+            _userService.CreateUser(userDTO);
+            return Created("",1);
+        }
+
+        [HttpDelete]
+        [Route("DeleteUser")]
+        public IActionResult Delete(int id)
+        {
+            _userService.DeleteUser(id);
+            return Ok("deleted");
+        }
 
     }
 }

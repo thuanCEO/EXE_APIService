@@ -1,3 +1,4 @@
+using AutoMapper;
 using BusinessObjects.Models;
 using DataAccessObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -33,6 +34,7 @@ namespace ShopServiceAPISystem
             builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>
             options.UseMySQL(connectionString));
 
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //JWT
             var secretKey = builder.Configuration["AppSettings:SecretKey"];

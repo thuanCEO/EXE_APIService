@@ -35,7 +35,7 @@ namespace DataAccessObjects
 
         public List<User> GetAllUser()
         {
-            return _context.Users.ToList();
+            return _context.Users.Where(x => x.Status == 1).ToList();
         }
 
         public User Login(string userName, string password)

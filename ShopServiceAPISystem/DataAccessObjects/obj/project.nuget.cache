@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EwzwHHZer0G9MKM1NIfeJyOrcAhJpa/G9LRU+6v0RSH/9EWMrv/Vrt/ShLpYyJbfMQfV79OvdtkEPwPxzTcz4w==",
+  "dgSpecHash": "y4cUPCGVg7tiPe93R108+p/5sFFbGBuzMb8467wRIGlTNaz4vuJZGhuWyeVEdiUuWl3s2TbbFR62Bes50XGDxw==",
   "success": true,
   "projectFilePath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Quanglatui\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
+    "C:\\Users\\Quanglatui\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
@@ -49,6 +51,8 @@
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\Quanglatui\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\Quanglatui\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
