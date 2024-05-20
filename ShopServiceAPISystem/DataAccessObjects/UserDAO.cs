@@ -63,6 +63,7 @@ namespace DataAccessObjects
                     new Claim(ClaimTypes.Email, user.Email),
                     new Claim("UserName", user.UserName),
                     new Claim("Id", user.Id.ToString()),
+                    new Claim("RoleID", user.RoleId.ToString()),
 
                     new Claim("TokenId", Guid.NewGuid().ToString())
                 }),

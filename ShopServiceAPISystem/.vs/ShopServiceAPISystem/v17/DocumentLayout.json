@@ -1,12 +1,85 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\fpt\\exe101_201\\fe\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\shopserviceapisystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|solutionrelative:dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\UserDAO.cs",
+              "ToolTip": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\UserDAO.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwDsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:17:40.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ProductDTO.cs",
+              "ToolTip": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\ProductDTO.cs",
+              "RelativeToolTip": "DTOs\\ProductDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:17:38.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Program.cs",
+              "ToolTip": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Program.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:12:35.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\appsettings.json",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\appsettings.json",
+              "ToolTip": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\appsettings.json",
+              "RelativeToolTip": "ShopServiceAPISystem\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-16T03:00:57.924Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

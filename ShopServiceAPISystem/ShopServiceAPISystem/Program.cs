@@ -18,25 +18,35 @@ namespace ShopServiceAPISystem
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Add CORS policy
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policyBuilder =>
+                {
+                    policyBuilder.WithOrigins("http://localhost:3000")
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+                });
+            });
 
-            //Add service
+            // Register your services and repositories
             builder.Services.AddScoped<UserDAO>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<UserService>();
 
+            // Database connection
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>
-            options.UseMySQL(connectionString));
+                options.UseMySQL(connectionString));
 
+            // AutoMapper configuration
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //JWT
+            // JWT Authentication configuration
             var secretKey = builder.Configuration["AppSettings:SecretKey"];
             var secretKeyByte = Encoding.UTF8.GetBytes(secretKey);
 
@@ -46,14 +56,11 @@ namespace ShopServiceAPISystem
                 {
                     ValidateIssuer = false,
                     ValidateAudience = false,
-
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretKeyByte),
-
                     ClockSkew = TimeSpan.Zero
                 };
             });
-
 
             var app = builder.Build();
 
@@ -66,10 +73,10 @@ namespace ShopServiceAPISystem
 
             app.UseHttpsRedirection();
 
+            app.UseCors();
+
             app.UseAuthentication();
-
             app.UseAuthorization();
-
 
             app.MapControllers();
 
