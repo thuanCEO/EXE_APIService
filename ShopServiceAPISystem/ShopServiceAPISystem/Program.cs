@@ -8,6 +8,7 @@ using Repository.Implementation;
 using Repository.Interfaces;
 using Service;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace ShopServiceAPISystem
 {
@@ -19,7 +20,9 @@ namespace ShopServiceAPISystem
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -29,6 +32,9 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<UserDAO>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<UserService>();
+            builder.Services.AddScoped<ProductDAO>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<ProductService>();
 
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>

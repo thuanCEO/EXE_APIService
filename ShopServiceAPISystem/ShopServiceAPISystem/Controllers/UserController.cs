@@ -1,4 +1,5 @@
-﻿using BusinessObjects.Models;
+﻿using AutoMapper;
+using BusinessObjects.Models;
 using DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Service;
@@ -10,9 +11,11 @@ namespace ShopServiceAPISystem.Controllers
     public class UserController : ControllerBase
     {
         private UserService _userService;
-        public UserController(UserService userService)
+        private readonly IMapper _mapper;
+        public UserController(UserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -39,7 +42,8 @@ namespace ShopServiceAPISystem.Controllers
         [Route("CreateUser")]
         public IActionResult Create([FromBody] UserDTO userDTO)
         {
-            _userService.CreateUser(userDTO);
+            User user = _mapper.Map<User>(userDTO);
+            _userService.CreateUser(user);
             return Created("",1);
         }
 

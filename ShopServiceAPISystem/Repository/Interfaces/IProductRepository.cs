@@ -1,0 +1,16 @@
+﻿using BusinessObjects.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repository.Interfaces
+{
+    public interface IProductRepository
+    {
+        void AddProduct(Product product);
+
+        List<Product> GetAllProduct();
+    }
+}

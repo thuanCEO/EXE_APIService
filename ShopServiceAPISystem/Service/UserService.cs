@@ -8,12 +8,10 @@ namespace Service
     public class UserService
     {
         private IUserRepository _userRepository;
-        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _mapper = mapper;
         }
 
         public List<User> GetAllUsers()
@@ -38,9 +36,8 @@ namespace Service
         {
             _userRepository.UpdateUser(user);
         }
-        public void CreateUser(UserDTO userDTO)
+        public void CreateUser(User user)
         {
-            User user = _mapper.Map<User>(userDTO);
             _userRepository.AddUser(user);
         }
     }
