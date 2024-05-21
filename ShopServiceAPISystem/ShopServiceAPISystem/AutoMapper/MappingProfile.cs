@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace ShopServiceAPISystem.AutoMapper
 {
     public class MappingProfile : Profile
     {

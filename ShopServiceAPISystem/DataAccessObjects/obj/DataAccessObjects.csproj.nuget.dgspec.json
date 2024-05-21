@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj": {}
+    "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj": {}
   },
   "projects": {
-    "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\THUAN\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\Quanglatui\\.nuget\\packages\\",
+        "outputPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\THUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Quanglatui\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -39,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -99,25 +89,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj": {
+    "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
-        "packagesPath": "C:\\Users\\THUAN\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\obj\\",
+        "projectPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\DataAccessObjects.csproj",
+        "packagesPath": "C:\\Users\\Quanglatui\\.nuget\\packages\\",
+        "outputPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\THUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Quanglatui\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,15 +111,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj"
+              "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -142,11 +127,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -168,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
