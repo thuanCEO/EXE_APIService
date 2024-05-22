@@ -12,18 +12,18 @@ namespace Repository.Implementation
             _dao = dao;
         }
 
-        public void AddUser(User user)
+        public void CreateUser(User user)
         {
-            _dao.AddUser(user);
+            _dao.CreateUser(user);
         }
 
         public void DeleteUser(int id)
         {
             _dao.DeleteUser(id);
         }
-        public List<User> GetAllUser()
+        public List<User> GetAllUsers()
         {
-            return _dao.GetAllUser();
+            return _dao.GetAllUsers();
         }
 
         public User Login(string userName, string password)

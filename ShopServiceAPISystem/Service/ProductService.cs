@@ -22,12 +22,12 @@ namespace Service
 
         public List<Product> GetAllProducts()
         {
-            return _productRepository.GetAllProduct();
+            return _productRepository.GetAllProducts();
         }
 
         public void CreateProduct(Product product)
         {
-            _productRepository.AddProduct(product);
+            _productRepository.CreateProduct(product);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BusinessObjects.Models;
+﻿using AutoMapper;
+using BusinessObjects.Models;
 using DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +12,11 @@ namespace ShopServiceAPISystem.Controllers
     public class ProductController : ControllerBase
     {
         private ProductService _productService;
-        public ProductController(ProductService productService)
+        private readonly IMapper _mapper;
+        public ProductController(ProductService productService, IMapper mapper)
         {
             _productService = productService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -24,8 +27,9 @@ namespace ShopServiceAPISystem.Controllers
         }
         [HttpPost]
         [Route("CreateProduct")]
-        public IActionResult Create([FromBody] Product product)
+        public IActionResult Create([FromBody] ProductDTO productDTO)
         {
+            Product product = _mapper.Map<Product>(productDTO);
             _productService.CreateProduct(product);
             return Created("", 1);
         }

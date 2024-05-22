@@ -16,7 +16,7 @@ namespace Service
 
         public List<User> GetAllUsers()
         {
-            return _userRepository.GetAllUser();
+            return _userRepository.GetAllUsers();
         }
 
         public User Login(string userName, string password)
@@ -38,7 +38,7 @@ namespace Service
         }
         public void CreateUser(User user)
         {
-            _userRepository.AddUser(user);
+            _userRepository.CreateUser(user);
         }
     }
 }
