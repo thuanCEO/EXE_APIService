@@ -17,7 +17,7 @@ namespace DataAccessObjects
             _configuration = configuration;
         }
 
-        public void AddUser(User user)
+        public void CreateUser(User user)
         {
             _context.Users.Add(user);
             _context.SaveChanges();
@@ -33,7 +33,7 @@ namespace DataAccessObjects
             }
         }
 
-        public List<User> GetAllUser()
+        public List<User> GetAllUsers()
         {
             return _context.Users.Where(x => x.Status == 1).ToList();
         }

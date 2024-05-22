@@ -16,7 +16,7 @@ namespace DataAccessObjects
             _context = context;
         }
 
-        public void AddProduct(Product product)
+        public void CreateProduct(Product product)
         {
             _context.Products.Add(product);
             _context.SaveChanges();
@@ -32,15 +32,21 @@ namespace DataAccessObjects
             }
         }
 
-        public List<Product> GetAllProduct()
+        public List<Product> GetAllProducts()
         {
-            return _context.Products.Where(x => x.Status == 1)
+            return _context.Products
                 .OrderByDescending(x =>x.Id)
-                .Include(p => p.Feedbacks)
-                .Include(p => p.Category)
+                .Include(x => x.Feedbacks)
+                .Include(x => x.Category)
                 .ToList();
         }
-        
-         
+
+        public Product GetProductByID(int id)
+        {
+            return _context.Products
+                .Include(p => p.Feedbacks)
+                .Include(p => p.Category)
+                .FirstOrDefault(x => x.Id == id);
+        }
     }
 }

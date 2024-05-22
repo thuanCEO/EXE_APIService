@@ -17,15 +17,15 @@ namespace Repository.Implementation
             _dao = dao;
         }
 
-        public void AddProduct(Product product)
+        public void CreateProduct(Product product)
         {
-            _dao.AddProduct(product);
+            _dao.CreateProduct(product);
         }
 
 
-        public List<Product> GetAllProduct()
+        public List<Product> GetAllProducts()
         {
-            return _dao.GetAllProduct();
+            return _dao.GetAllProducts();
         }
     }
 }

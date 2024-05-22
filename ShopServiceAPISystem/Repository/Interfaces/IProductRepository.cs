@@ -9,8 +9,8 @@ namespace Repository.Interfaces
 {
     public interface IProductRepository
     {
-        void AddProduct(Product product);
+        void CreateProduct(Product product);
 
-        List<Product> GetAllProduct();
+        List<Product> GetAllProducts();
     }
 }
