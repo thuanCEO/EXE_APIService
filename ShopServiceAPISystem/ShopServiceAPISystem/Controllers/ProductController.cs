@@ -38,7 +38,7 @@ namespace ShopServiceAPISystem.Controllers
         {
             Product product = _mapper.Map<Product>(productDTO);
             _productService.CreateProduct(product);
-            return Created("", 1);
+            return Created("", "Tạo thành công");
         }
         [HttpPut]
         [Route("UpdateProduct")]
