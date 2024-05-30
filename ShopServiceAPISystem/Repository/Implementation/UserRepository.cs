@@ -32,9 +32,9 @@ namespace Repository.Implementation
             return _dao.Login(userName, password);
         }
 
-        public void UpdateUser(User user)
+        public void UpdateUser(int id)
         {
-            _dao.UpdateUser(user);
+            _dao.UpdateUser(id);
         }
 
         public string GenerateToken(User user)

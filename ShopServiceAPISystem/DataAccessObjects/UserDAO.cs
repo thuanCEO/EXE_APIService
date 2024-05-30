@@ -19,6 +19,8 @@ namespace DataAccessObjects
 
         public void CreateUser(User user)
         {
+            user.Status = 1;
+            user.RoleId = 3;
             _context.Users.Add(user);
             _context.SaveChanges();
         }
@@ -35,7 +37,7 @@ namespace DataAccessObjects
 
         public List<User> GetAllUsers()
         {
-            return _context.Users.Where(x => x.Status == 1).ToList();
+            return _context.Users.ToList();
         }
 
         public User Login(string userName, string password)
@@ -44,8 +46,9 @@ namespace DataAccessObjects
             return _context.Users.FirstOrDefault(x => x.UserName.Equals(userName) && x.Password.Equals(password));
         }
 
-        public void UpdateUser(User user)
+        public void UpdateUser(int id)
         {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
             _context.Users.Update(user);
             _context.SaveChanges();
         }

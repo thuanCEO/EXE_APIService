@@ -22,10 +22,24 @@ namespace Repository.Implementation
             _dao.CreateProduct(product);
         }
 
+        public bool DeleteProduct(int id)
+        {
+            return _dao.DeleteProduct(id);
+        }
 
         public List<Product> GetAllProducts()
         {
             return _dao.GetAllProducts();
+        }
+
+        public Product GetProductByID(int id)
+        {
+            return _dao.GetProductByID(id);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            _dao.UpdateProduct(product);
         }
     }
 }

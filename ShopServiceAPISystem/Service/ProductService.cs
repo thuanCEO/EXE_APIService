@@ -24,10 +24,22 @@ namespace Service
         {
             return _productRepository.GetAllProducts();
         }
+        public Product GetProductById(int id)
+        {
+            return _productRepository.GetProductByID(id);
+        }
 
         public void CreateProduct(Product product)
         {
             _productRepository.CreateProduct(product);
+        }
+        public void UpdateProduct(Product product)
+        {
+            _productRepository.UpdateProduct(product);
+        }
+        public bool DeleteProduct(int id)
+        {
+            return _productRepository.DeleteProduct(id);
         }
     }
 }

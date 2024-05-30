@@ -25,13 +25,41 @@ namespace ShopServiceAPISystem.Controllers
         {
             return Ok(_productService.GetAllProducts());
         }
+        [HttpGet]
+        [Route("GetProductById")]
+        public IActionResult GetProductById(int id)
+        {
+            return Ok(_productService.GetProductById(id));
+        }
+
         [HttpPost]
         [Route("CreateProduct")]
-        public IActionResult Create([FromBody] ProductDTO productDTO)
+        public IActionResult CreateProduct([FromBody] ProductDTO productDTO)
         {
             Product product = _mapper.Map<Product>(productDTO);
             _productService.CreateProduct(product);
             return Created("", 1);
+        }
+        [HttpPut]
+        [Route("UpdateProduct")]
+        public IActionResult UpdateProduct([FromBody] ProductDTO productDTO, int id)
+        {
+            var product = _mapper.Map<Product>( productDTO);
+            product.Id = id;
+            _productService.UpdateProduct(product);
+            return Ok("Đã update");
+        }
+        [HttpDelete]
+        [Route("DeleteProduct")]
+        public IActionResult DeleteProduct(int id)
+        {
+            if (_productService.DeleteProduct(id) == true)
+            {
+                return Ok("Da xoa");
+            }
+            else
+                return StatusCode(500, "Không tồn tại Id này");
+            
         }
     }
 }
