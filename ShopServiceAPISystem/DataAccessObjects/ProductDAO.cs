@@ -22,17 +22,28 @@ namespace DataAccessObjects
             _context.SaveChanges();
         }
 
-        public void DeleteProduct(int id)
+        public void UpdateProduct(Product product)
+        {
+            Product existingProduct = _context.Products.FirstOrDefault(p => p.Id == product.Id);
+            // Đánh dấu thực thể là đã được chỉnh sửa
+            _context.Entry(existingProduct).CurrentValues.SetValues(product);
+            _context.SaveChanges();
+        }
+
+        public bool DeleteProduct(int id)
         {
             var product = _context.Products.Find(id);
+            if(product == null)
+                return false;
             if (product != null)
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }
+            return true;
         }
 
-        public List<Product> GetAllProducts()
+           public List<Product> GetAllProducts()
         {
             return _context.Products
                 .OrderByDescending(x =>x.Id)
