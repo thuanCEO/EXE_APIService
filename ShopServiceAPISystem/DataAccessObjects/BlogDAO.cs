@@ -16,23 +16,47 @@ namespace DataAccessObjects
             _context = context;
         }
 
+        public void CreateBlog(Blog blog)
+        {
+            blog.Status = 1;
+            _context.Blogs.Add(blog);
+            _context.SaveChanges();
+        }
+
+        public void UpdateBlog(Blog blog)
+        {
+            Blog existingBlog = _context.Blogs.FirstOrDefault(p => p.Id == blog.Id);
+            blog.Status = existingBlog.Status;
+            _context.Entry(existingBlog).CurrentValues.SetValues(blog);
+            _context.SaveChanges();
+        }
+
+        public bool DeleteBlog(int id)
+        {
+            var blog = _context.Blogs.Find(id);
+            if (blog == null)
+                return false;
+            if (blog != null)
+            {
+                blog.Status = 0;
+                _context.Blogs.Update(blog);
+                _context.SaveChanges();
+            }
+            return true;
+        }
+
         public List<Blog> GetAllBlogs()
         {
             return _context.Blogs
-                .OrderByDescending(x =>x.Id)
-                .Include(x => x.User)
+                .Where(x => x.Status != 0)
+                .OrderByDescending(x => x.Id)
                 .ToList();
         }
-        public Blog GetBlogByID(int id)
+
+        public Blog GetBlogById(int id)
         {
             return _context.Blogs
-                .Include(x => x.User)
                 .FirstOrDefault(x => x.Id == id);
-        }
-        public void CreateBlog(Blog blog)
-        {
-            _context.Blogs.Add(blog);
-            _context.SaveChanges();
         }
     }
 }

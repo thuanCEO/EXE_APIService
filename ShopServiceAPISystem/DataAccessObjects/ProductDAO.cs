@@ -18,6 +18,7 @@ namespace DataAccessObjects
 
         public void CreateProduct(Product product)
         {
+            product.Status = 1;
             _context.Products.Add(product);
             _context.SaveChanges();
         }
@@ -25,7 +26,7 @@ namespace DataAccessObjects
         public void UpdateProduct(Product product)
         {
             Product existingProduct = _context.Products.FirstOrDefault(p => p.Id == product.Id);
-            // Đánh dấu thực thể là đã được chỉnh sửa
+            product.Status = existingProduct.Status;
             _context.Entry(existingProduct).CurrentValues.SetValues(product);
             _context.SaveChanges();
         }
@@ -37,7 +38,8 @@ namespace DataAccessObjects
                 return false;
             if (product != null)
             {
-                _context.Products.Remove(product);
+                product.Status = 0;
+                _context.Products.Update(product);
                 _context.SaveChanges();
             }
             return true;
@@ -46,13 +48,13 @@ namespace DataAccessObjects
            public List<Product> GetAllProducts()
         {
             return _context.Products
+                .Where(x => x.Status != 0)
                 .OrderByDescending(x =>x.Id)
                 .Include(x => x.Feedbacks)
-                .Include(x => x.Category)
                 .ToList();
         }
 
-        public Product GetProductByID(int id)
+        public Product GetProductById(int id)
         {
             return _context.Products
                 .Include(p => p.Feedbacks)

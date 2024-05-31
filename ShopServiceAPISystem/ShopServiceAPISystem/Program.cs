@@ -48,6 +48,9 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<BlogDAO>();
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
             builder.Services.AddScoped<BlogService>();
+            builder.Services.AddScoped<OrderDAO>();
+            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+            builder.Services.AddScoped<OrderService>();
 
             // Database connection
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

@@ -13,6 +13,6 @@ namespace Repository.Interfaces
         void UpdateProduct(Product product);
         bool DeleteProduct(int id);
         List<Product> GetAllProducts();
-        Product GetProductByID(int id);
+        Product GetProductById(int id);
     }
 }

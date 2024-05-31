@@ -32,7 +32,7 @@ namespace ShopServiceAPISystem.Controllers
             User user = _userService.Login(userName, password);
             if (user == null)
             {
-                return NotFound("Invalid username or password");
+                return NotFound("Sai tên đăng nhập hoặc mật khẩu");
             }
 
             return Ok(_userService.GenerateToken(user));
@@ -44,7 +44,7 @@ namespace ShopServiceAPISystem.Controllers
         {
             User user = _mapper.Map<User>(userDTO);
             _userService.CreateUser(user);
-            return Created("",1);
+            return Created("","Đã tạo account");
         }
 
         [HttpDelete]
@@ -52,7 +52,7 @@ namespace ShopServiceAPISystem.Controllers
         public IActionResult Delete(int id)
         {
             _userService.DeleteUser(id);
-            return Ok("deleted");
+            return Ok("Đã xóa");
         }
 
     }

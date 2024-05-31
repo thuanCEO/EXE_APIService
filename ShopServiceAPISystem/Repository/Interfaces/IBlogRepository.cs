@@ -9,8 +9,10 @@ namespace Repository.Interfaces
 {
     public interface IBlogRepository
     {
-        List<Blog> GetAllBlogs();
-        Blog GetBlogByID(int id);
         void CreateBlog(Blog blog);
+        void UpdateBlog(Blog blog);
+        bool DeleteBlog(int id);
+        List<Blog> GetAllBlogs();
+        Blog GetBlogById(int id);
     }
 }
