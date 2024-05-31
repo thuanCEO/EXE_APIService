@@ -17,18 +17,27 @@ namespace Service
         {
             _blogRepository = blogRepository;
         }
+
         public List<Blog> GetAllBlogs()
         {
             return _blogRepository.GetAllBlogs();
         }
+        public Blog GetBlogById(int id)
+        {
+            return _blogRepository.GetBlogById(id);
+        }
 
-        public void AddBlog(Blog blog)
+        public void CreateBlog(Blog blog)
         {
             _blogRepository.CreateBlog(blog);
         }
-        public Blog GetBlogByID(int id)
+        public void UpdateBlog(Blog blog)
         {
-            return _blogRepository.GetBlogByID(id);
+            _blogRepository.UpdateBlog(blog);
+        }
+        public bool DeleteBlog(int id)
+        {
+            return _blogRepository.DeleteBlog(id);
         }
     }
 }

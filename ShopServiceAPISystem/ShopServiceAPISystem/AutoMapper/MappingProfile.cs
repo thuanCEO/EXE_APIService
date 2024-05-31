@@ -16,6 +16,8 @@ namespace ShopServiceAPISystem.AutoMapper
             CreateMap<UserDTO, User>();
             CreateMap<ProductDTO, Product>();
             CreateMap<BlogDTO, Blog>();
+            CreateMap<OrderDTO, Order>();
+            CreateMap<OrderDetailDTO, OrderDetail>();
         }
     }
 }

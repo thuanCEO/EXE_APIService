@@ -32,9 +32,9 @@ namespace Service
         {
             _userRepository.DeleteUser(id);
         }
-        public void UpdateUser(int id)
+        public void UpdateUser(User user)
         {
-            _userRepository.UpdateUser(id);
+            _userRepository.UpdateUser(user);
         }
         public void CreateUser(User user)
         {

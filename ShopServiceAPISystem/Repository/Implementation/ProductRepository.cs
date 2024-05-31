@@ -32,9 +32,9 @@ namespace Repository.Implementation
             return _dao.GetAllProducts();
         }
 
-        public Product GetProductByID(int id)
+        public Product GetProductById(int id)
         {
-            return _dao.GetProductByID(id);
+            return _dao.GetProductById(id);
         }
 
         public void UpdateProduct(Product product)

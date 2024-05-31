@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public class BlogDTO
+    public class OrderDTO
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
         public int? UserId { get; set; }
+        public int? PaymentId { get; set; }
+        public double? TotalPrice { get; set; }
+        public double? FinalPrice { get; set; }
     }
 }

@@ -22,14 +22,24 @@ namespace Repository.Implementation
             _dao.CreateBlog(blog);
         }
 
+        public bool DeleteBlog(int id)
+        {
+            return _dao.DeleteBlog(id);
+        }
+
         public List<Blog> GetAllBlogs()
         {
             return _dao.GetAllBlogs();
         }
 
-        public Blog GetBlogByID(int id)
+        public Blog GetBlogById(int id)
         {
-            return _dao.GetBlogByID(id);
+            return _dao.GetBlogById(id);
+        }
+
+        public void UpdateBlog(Blog blog)
+        {
+            _dao.UpdateBlog(blog);
         }
     }
 }

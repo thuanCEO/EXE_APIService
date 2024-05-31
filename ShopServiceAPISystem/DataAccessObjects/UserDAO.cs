@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,32 +26,46 @@ namespace DataAccessObjects
             _context.SaveChanges();
         }
 
-        public void DeleteUser(int id)
+        public void UpdateUser(User user)
+        {
+            User existingUser = _context.Users.FirstOrDefault(p => p.Id == user.Id);
+            user.Status = existingUser.Status;
+            _context.Entry(existingUser).CurrentValues.SetValues(user);
+            _context.SaveChanges();
+        }
+
+        public bool DeleteUser(int id)
         {
             var user = _context.Users.Find(id);
+            if (user == null)
+                return false;
             if (user != null)
             {
-                _context.Users.Remove(user);
+                user.Status = 0;
+                _context.Users.Update(user);
                 _context.SaveChanges();
             }
+            return true;
         }
 
         public List<User> GetAllUsers()
         {
-            return _context.Users.ToList();
+            return _context.Users
+                .Where(x => x.Status != 0)
+                .OrderByDescending(x => x.Id)
+                .ToList();
+        }
+
+        public User GetUserById(int id)
+        {
+            return _context.Users
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public User Login(string userName, string password)
         {
 
             return _context.Users.FirstOrDefault(x => x.UserName.Equals(userName) && x.Password.Equals(password));
-        }
-
-        public void UpdateUser(int id)
-        {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
-            _context.Users.Update(user);
-            _context.SaveChanges();
         }
 
         public string GenerateToken(User user)
@@ -66,7 +81,7 @@ namespace DataAccessObjects
                     new Claim(ClaimTypes.Email, user.Email),
                     new Claim("UserName", user.UserName),
                     new Claim("Id", user.Id.ToString()),
-
+                    new Claim("Role", user.RoleId.ToString()),
                     new Claim("TokenId", Guid.NewGuid().ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(1),

@@ -54,7 +54,7 @@ namespace DataAccessObjects
                 .ToList();
         }
 
-        public Product GetProductByID(int id)
+        public Product GetProductById(int id)
         {
             return _context.Products
                 .Include(p => p.Feedbacks)
