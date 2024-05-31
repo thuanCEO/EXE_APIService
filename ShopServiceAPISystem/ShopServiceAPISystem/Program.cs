@@ -54,6 +54,9 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<OrderDetailDAO>();
             builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             builder.Services.AddScoped<OrderDetailService>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<CategoryDAO>();
+            builder.Services.AddScoped<CategoryService>();
 
             // Database connection
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
