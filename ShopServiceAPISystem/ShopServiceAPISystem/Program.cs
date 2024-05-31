@@ -57,6 +57,9 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<CategoryDAO>();
             builder.Services.AddScoped<CategoryService>();
+            builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+            builder.Services.AddScoped<FeedbackDAO>();
+            builder.Services.AddScoped<FeedbackService>();
 
             // Database connection
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
