@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
 using DTOs;
+using DTOs.Categories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace ShopServiceAPISystem.AutoMapper
             CreateMap<BlogDTO, Blog>();
             CreateMap<OrderDTO, Order>();
             CreateMap<OrderDetailDTO, OrderDetail>();
+            CreateMap<RequestCategoryDTO, Category>();
+            CreateMap<ResponseCategoryDTO, Category>();
         }
     }
 }
