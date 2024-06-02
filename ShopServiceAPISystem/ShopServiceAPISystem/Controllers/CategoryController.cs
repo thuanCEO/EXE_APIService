@@ -79,13 +79,13 @@ namespace ShopServiceAPISystem.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateCategoryStatus/{id}")]
-        public async Task<IActionResult> UpdateCategoryStatus(int id, [FromBody] int status)
+        [Route("UpdateCategoryStatus/{id}/{status}")]
+        public async Task<IActionResult> UpdateCategoryStatus(int id, int status)
         {
             var response = await _categoryService.UpdateCategoryStatus(id, status);
             if (!response.Success)
             {
-                return NotFound(response);
+                return StatusCode(500, response);
             }
             return Ok(response);
         }

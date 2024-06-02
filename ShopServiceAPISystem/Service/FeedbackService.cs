@@ -64,14 +64,15 @@ namespace Service
             return response;
         }
 
-        public async Task<DataResponse<int>> CreateFeedback(RequestFeedbackDTO feedbackDTO)
+        public async Task<DataResponse<ResponseFeedbackDTO>> CreateFeedback(RequestFeedbackDTO feedbackDTO)
         {
-            var response = new DataResponse<int>();
+            var response = new DataResponse<ResponseFeedbackDTO>();
             try
             {
                 var feedback = _mapper.Map<Feedback>(feedbackDTO);
                 await Task.Run(() => _feedbackRepository.CreateFeedback(feedback));
-                response.Data = _mapper.Map<ResponseFeedbackDTO>(feedback);
+                var createdFeedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(feedback.Id));
+                response.Data = _mapper.Map<ResponseFeedbackDTO>(createdFeedback);
                 response.Success = true;
                 response.Message = "Feedback created successfully.";
             }
@@ -83,15 +84,15 @@ namespace Service
             return response;
         }
 
-        public async Task<DataResponse<int>> UpdateFeedback(int id, RequestFeedbackDTO feedbackDTO)
+        public async Task<DataResponse<ResponseFeedbackDTO>> UpdateFeedback(int id, RequestFeedbackDTO feedbackDTO)
         {
-            var response = new DataResponse<int>();
+            var response = new DataResponse<ResponseFeedbackDTO>();
             try
             {
                 var feedbackToUpdate = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
                 if (feedbackToUpdate == null)
                 {
-                    response.Data = 0;
+                    response.Data = null;
                     response.Success = false;
                     response.Message = "Feedback not found.";
                 }

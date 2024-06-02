@@ -79,13 +79,13 @@ namespace ShopServiceAPISystem.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateFeedbackStatus/{id}")]
-        public async Task<IActionResult> UpdateFeedbackStatus(int id, [FromBody] int status)
+        [Route("UpdateFeedbackStatus/{id}/{status}")]
+        public async Task<IActionResult> UpdateFeedbackStatus(int id, int status)
         {
             var response = await _feedbackService.UpdateFeedbackStatus(id, status);
             if (!response.Success)
             {
-                return NotFound(response);
+                return StatusCode(500, response);
             }
             return Ok(response);
         }
