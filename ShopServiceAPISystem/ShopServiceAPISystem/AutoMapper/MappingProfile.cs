@@ -1,8 +1,13 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
 using DTOs;
+using DTOs.Cartproducts;
+using DTOs.Carts;
 using DTOs.Categories;
 using DTOs.Feedbacks;
+using DTOs.Services;
+using DTOs.shippings;
+using DTOs.vouchers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +31,18 @@ namespace ShopServiceAPISystem.AutoMapper
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.FullName))
                 .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName));
             CreateMap<RequestFeedbackDTO, Feedback>();
+            CreateMap<ResponseServiceDTO, BusinessObjects.Models.Service>();
+            CreateMap<RequestServiceDTO, BusinessObjects.Models.Service>();
+            CreateMap<ResponseShippingDTO, Shipping>();
+            CreateMap<RequestShippingDTO, Shipping>();
+            CreateMap<RequestVoucherDTO, Voucher>();
+            CreateMap<ResponseVoucherDTO, Voucher>();
+            CreateMap<Cart, ResponseCartDTO>()
+               .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.FullName));
+            CreateMap<RequestCartDTO, Cart>();
+            CreateMap<CartProduct, ResponseCartProductDTO>()
+           .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName));
+            CreateMap<RequestCartProductDTO, CartProduct>();
         }
     }
 }
