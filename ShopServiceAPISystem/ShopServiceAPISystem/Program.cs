@@ -60,6 +60,21 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
             builder.Services.AddScoped<FeedbackDAO>();
             builder.Services.AddScoped<FeedbackService>();
+            builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+            builder.Services.AddScoped<ServiceDAO>();
+            builder.Services.AddScoped<ServiceService>();
+            builder.Services.AddScoped<IShippingRepository, ShippingRepository>();
+            builder.Services.AddScoped<ShippingDAO>();
+            builder.Services.AddScoped<ShippingService>();
+            builder.Services.AddScoped<IVoucherRepository, VoucherRepository>();
+            builder.Services.AddScoped<VoucherDAO>();
+            builder.Services.AddScoped<VoucherService>();
+            builder.Services.AddScoped<ICartRepository, CartRepository>();
+            builder.Services.AddScoped<CartDAO>();
+            builder.Services.AddScoped<CartService>();
+            builder.Services.AddScoped<ICartProductRepository, CartProductRepository>();
+            builder.Services.AddScoped<CartProductDAO>();
+            builder.Services.AddScoped<CartProductService>();
 
             // Database connection
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
