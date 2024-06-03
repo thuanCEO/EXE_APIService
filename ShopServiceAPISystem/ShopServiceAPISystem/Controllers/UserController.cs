@@ -25,6 +25,13 @@ namespace ShopServiceAPISystem.Controllers
             return Ok(_userService.GetAllUsers());
         }
 
+        [HttpGet]
+        [Route("GetUserById")]
+        public IActionResult GetUserById(int id)
+        {
+            return Ok(_userService.GetUserById(id));
+        }
+
         [HttpPost]
         [Route("Login")]
         public IActionResult Login(string userName, string password)
@@ -45,6 +52,16 @@ namespace ShopServiceAPISystem.Controllers
             User user = _mapper.Map<User>(userDTO);
             _userService.CreateUser(user);
             return Created("","Đã tạo account");
+        }
+
+        [HttpPut]
+        [Route("UpdateUser")]
+        public IActionResult UpdateProduct([FromBody] UpdateUserDTO userDTO, int id)
+        {
+            var user = _mapper.Map<User>(userDTO);
+            user.Id = id;
+            _userService.UpdateUser(user);
+            return Ok("Update thành công");
         }
 
         [HttpDelete]

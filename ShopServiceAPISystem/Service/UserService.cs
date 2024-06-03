@@ -18,6 +18,10 @@ namespace Service
         {
             return _userRepository.GetAllUsers();
         }
+        public User GetUserById(int id)
+        {
+            return _userRepository.GetUserById(id);
+        }
 
         public User Login(string userName, string password)
         {

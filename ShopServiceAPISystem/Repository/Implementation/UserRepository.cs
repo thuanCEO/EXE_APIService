@@ -25,6 +25,10 @@ namespace Repository.Implementation
         {
             return _dao.GetAllUsers();
         }
+        public User GetUserById(int id)
+        {
+            return _dao.GetUserById(id);
+        }
 
         public User Login(string userName, string password)
         {
