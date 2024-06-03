@@ -58,6 +58,7 @@ namespace DataAccessObjects
         {
             return _context.Products
                 .Include(p => p.Feedbacks)
+                .ThenInclude(x => x.User)
                 .Include(p => p.Category)
                 .FirstOrDefault(x => x.Id == id);
         }
