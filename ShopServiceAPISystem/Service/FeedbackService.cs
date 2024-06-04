@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
 using DTOs.Feedbacks;
 using Repository.Interfaces;
 using System.Collections.Generic;
@@ -19,155 +18,62 @@ namespace Service
             _mapper = mapper;
         }
 
-        public async Task<DataResponse<List<ResponseFeedbackDTO>>> GetAllFeedbacks()
+        public async Task<List<ResponseFeedbackDTO>> GetAllFeedbacks()
         {
-            var response = new DataResponse<List<ResponseFeedbackDTO>>();
-            try
-            {
-                var feedbacks = await Task.Run(() => _feedbackRepository.GetAllFeedbacks());
-                response.Data = _mapper.Map<List<ResponseFeedbackDTO>>(feedbacks);
-                response.Success = true;
-                response.Message = "Feedbacks retrieved successfully.";
-            }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            var feedbacks = await Task.Run(() => _feedbackRepository.GetAllFeedbacks());
+            return _mapper.Map<List<ResponseFeedbackDTO>>(feedbacks);
         }
 
-        public async Task<DataResponse<ResponseFeedbackDTO>> GetFeedbackById(int id)
+        public async Task<ResponseFeedbackDTO> GetFeedbackById(int id)
         {
-            var response = new DataResponse<ResponseFeedbackDTO>();
-            try
+            var feedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
+            if (feedback == null)
             {
-                var feedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
-                if (feedback == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Feedback not found.";
-                }
-                else
-                {
-                    response.Data = _mapper.Map<ResponseFeedbackDTO>(feedback);
-                    response.Success = true;
-                    response.Message = "Feedback retrieved successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            return _mapper.Map<ResponseFeedbackDTO>(feedback);
         }
 
-        public async Task<DataResponse<ResponseFeedbackDTO>> CreateFeedback(RequestFeedbackDTO feedbackDTO)
+        public async Task<int> CreateFeedback(RequestFeedbackDTO feedbackDTO)
         {
-            var response = new DataResponse<ResponseFeedbackDTO>();
-            try
-            {
-                var feedback = _mapper.Map<Feedback>(feedbackDTO);
-                await Task.Run(() => _feedbackRepository.CreateFeedback(feedback));
-                var createdFeedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(feedback.Id));
-                response.Data = _mapper.Map<ResponseFeedbackDTO>(createdFeedback);
-                response.Success = true;
-                response.Message = "Feedback created successfully.";
-            }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            var feedback = _mapper.Map<Feedback>(feedbackDTO);
+            await Task.Run(() => _feedbackRepository.CreateFeedback(feedback));
+            return feedback.Id;
         }
 
-        public async Task<DataResponse<ResponseFeedbackDTO>> UpdateFeedback(int id, RequestFeedbackDTO feedbackDTO)
+        public async Task<int> UpdateFeedback(int id, RequestFeedbackDTO feedbackDTO)
         {
-            var response = new DataResponse<ResponseFeedbackDTO>();
-            try
+            var feedbackToUpdate = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
+            if (feedbackToUpdate == null)
             {
-                var feedbackToUpdate = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
-                if (feedbackToUpdate == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Feedback not found.";
-                }
-                else
-                {
-                    _mapper.Map(feedbackDTO, feedbackToUpdate);
-                    await Task.Run(() => _feedbackRepository.UpdateFeedback(feedbackToUpdate));
-                    response.Data = _mapper.Map<ResponseFeedbackDTO>(feedbackToUpdate);
-                    response.Success = true;
-                    response.Message = "Feedback updated successfully.";
-                }
+                return 0;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            _mapper.Map(feedbackDTO, feedbackToUpdate);
+            await Task.Run(() => _feedbackRepository.UpdateFeedback(feedbackToUpdate));
+            return feedbackToUpdate.Id;
         }
 
-        public async Task<DataResponse<string>> DeleteFeedback(int id)
+        public async Task<string> DeleteFeedback(int id)
         {
-            var response = new DataResponse<string>();
-            try
+            var feedbackToDelete = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
+            if (feedbackToDelete == null)
             {
-                var feedbackToDelete = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
-                if (feedbackToDelete == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Feedback not found.";
-                }
-                else
-                {
-                    await Task.Run(() => _feedbackRepository.DeleteFeedback(id));
-                    response.Data = "Feedback deleted successfully.";
-                    response.Success = true;
-                    response.Message = "Feedback deleted successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            await Task.Run(() => _feedbackRepository.DeleteFeedback(id));
+            return "Feedback deleted successfully.";
         }
 
-        public async Task<DataResponse<ResponseFeedbackDTO>> UpdateFeedbackStatus(int id, int status)
+        public async Task<ResponseFeedbackDTO> UpdateFeedbackStatus(int id, int status)
         {
-            var response = new DataResponse<ResponseFeedbackDTO>();
-            try
+            var feedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
+            if (feedback == null)
             {
-                var feedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
-                if (feedback == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Feedback not found.";
-                }
-                else
-                {
-                    await Task.Run(() => _feedbackRepository.UpdateFeedbackStatus(id, status));
-                    var updatedFeedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
-                    response.Data = _mapper.Map<ResponseFeedbackDTO>(updatedFeedback);
-                    response.Success = true;
-                    response.Message = "Feedback status updated successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            await Task.Run(() => _feedbackRepository.UpdateFeedbackStatus(id, status));
+            var updatedFeedback = await Task.Run(() => _feedbackRepository.GetFeedbackById(id));
+            return _mapper.Map<ResponseFeedbackDTO>(updatedFeedback);
         }
     }
 }
