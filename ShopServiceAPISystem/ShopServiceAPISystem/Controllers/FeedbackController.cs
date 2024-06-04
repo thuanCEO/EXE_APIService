@@ -2,7 +2,6 @@
 using DTOs.Feedbacks;
 using Microsoft.AspNetCore.Mvc;
 using Service;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ShopServiceAPISystem.Controllers
@@ -22,72 +21,83 @@ namespace ShopServiceAPISystem.Controllers
         [Route("GetAllFeedbacks")]
         public async Task<IActionResult> GetAllFeedbacks()
         {
-            var response = await _feedbackService.GetAllFeedbacks();
-            if (!response.Success)
+            var feedbacks = await _feedbackService.GetAllFeedbacks();
+            if (feedbacks == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(feedbacks);
         }
 
         [HttpGet]
         [Route("GetFeedbackById/{id}")]
         public async Task<IActionResult> GetFeedbackById(int id)
         {
-            var response = await _feedbackService.GetFeedbackById(id);
-            if (!response.Success)
+            var feedback = await _feedbackService.GetFeedbackById(id);
+            if (feedback == null)
             {
-                return NotFound(response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(feedback);
         }
 
         [HttpPost]
         [Route("CreateFeedback")]
         public async Task<IActionResult> CreateFeedback([FromBody] RequestFeedbackDTO feedbackDTO)
         {
-            var response = await _feedbackService.CreateFeedback(feedbackDTO);
-            if (!response.Success)
+            var feedbackId = await _feedbackService.CreateFeedback(feedbackDTO);
+            if (feedbackId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error creating feedback");
             }
-            return CreatedAtAction(nameof(GetFeedbackById), new { id = response.Data }, response);
+
+            var createdFeedback = await _feedbackService.GetFeedbackById(feedbackId);
+            if (createdFeedback == null)
+            {
+                return StatusCode(500, "Error fetching newly created feedback");
+            }
+
+            return CreatedAtAction(nameof(GetFeedbackById), new { id = createdFeedback.Id }, createdFeedback);
         }
 
         [HttpPut]
         [Route("UpdateFeedback/{id}")]
         public async Task<IActionResult> UpdateFeedback(int id, [FromBody] RequestFeedbackDTO feedbackDTO)
         {
-            var response = await _feedbackService.UpdateFeedback(id, feedbackDTO);
-            if (!response.Success)
+
+            var feedbackId = await _feedbackService.UpdateFeedback(id, feedbackDTO);
+            if (feedbackId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error updating feedback");
             }
-            return Ok(response);
+
+            var updatedFeedback = await _feedbackService.GetFeedbackById(id);
+
+            return Ok(updatedFeedback);
         }
 
         [HttpDelete]
         [Route("DeleteFeedback/{id}")]
         public async Task<IActionResult> DeleteFeedback(int id)
         {
-            var response = await _feedbackService.DeleteFeedback(id);
-            if (!response.Success)
+            var message = await _feedbackService.DeleteFeedback(id);
+            if (message == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(message);
         }
 
         [HttpPut]
         [Route("UpdateFeedbackStatus/{id}/{status}")]
         public async Task<IActionResult> UpdateFeedbackStatus(int id, int status)
         {
-            var response = await _feedbackService.UpdateFeedbackStatus(id, status);
-            if (!response.Success)
+            var feedback = await _feedbackService.UpdateFeedbackStatus(id, status);
+            if (feedback == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(feedback);
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DTOs.Categories;
 using Microsoft.AspNetCore.Mvc;
-using Service;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ShopServiceAPISystem.Controllers
 {
@@ -22,72 +20,83 @@ namespace ShopServiceAPISystem.Controllers
         [Route("GetAllCategories")]
         public async Task<IActionResult> GetAllCategories()
         {
-            var response = await _categoryService.GetAllCategories();
-            if (!response.Success)
+            var categories = await _categoryService.GetAllCategories();
+            if (categories == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(categories);
         }
 
         [HttpGet]
         [Route("GetCategoryById/{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var response = await _categoryService.GetCategoryById(id);
-            if (!response.Success)
+            var category = await _categoryService.GetCategoryById(id);
+            if (category == null)
             {
-                return NotFound(response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(category);
         }
 
         [HttpPost]
         [Route("CreateCategory")]
         public async Task<IActionResult> CreateCategory([FromBody] RequestCategoryDTO categoryDTO)
         {
-            var response = await _categoryService.CreateCategory(categoryDTO);
-            if (!response.Success)
+            var categoryId = await _categoryService.CreateCategory(categoryDTO);
+            if (categoryId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error creating category");
             }
-            return CreatedAtAction(nameof(GetCategoryById), new { id = response.Data }, response);
+
+            var createdCategory = await _categoryService.GetCategoryById(categoryId);
+            if (createdCategory == null)
+            {
+                return StatusCode(500, "Error fetching newly created category");
+            }
+
+            return CreatedAtAction(nameof(GetCategoryById), new { id = createdCategory.Id }, createdCategory);
         }
 
         [HttpPut]
         [Route("UpdateCategory/{id}")]
         public async Task<IActionResult> UpdateCategory(int id, [FromBody] RequestCategoryDTO categoryDTO)
         {
-            var response = await _categoryService.UpdateCategory(id, categoryDTO);
-            if (!response.Success)
+
+            var categoryId = await _categoryService.UpdateCategory(id, categoryDTO);
+            if (categoryId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error updating category");
             }
-            return Ok(response);
+
+            var updatedCategory = await _categoryService.GetCategoryById(id);
+
+            return Ok(updatedCategory);
         }
 
         [HttpDelete]
         [Route("DeleteCategory/{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var response = await _categoryService.DeleteCategory(id);
-            if (!response.Success)
+            var message = await _categoryService.DeleteCategory(id);
+            if (message == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(message);
         }
 
         [HttpPut]
         [Route("UpdateCategoryStatus/{id}/{status}")]
         public async Task<IActionResult> UpdateCategoryStatus(int id, int status)
         {
-            var response = await _categoryService.UpdateCategoryStatus(id, status);
-            if (!response.Success)
+            var category = await _categoryService.UpdateCategoryStatus(id, status);
+            if (category == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(category);
         }
     }
 }
