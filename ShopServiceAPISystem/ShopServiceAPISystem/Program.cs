@@ -1,6 +1,7 @@
 using AutoMapper;
 using BusinessObjects.Models;
 using DataAccessObjects;
+using DTOs.ZaloPay.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -99,6 +100,10 @@ namespace ShopServiceAPISystem
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+            //payment
+            builder.Services.Configure<ZaloPayConfig>(
+                builder.Configuration.GetSection(ZaloPayConfig.ConfigName));
 
             var app = builder.Build();
 

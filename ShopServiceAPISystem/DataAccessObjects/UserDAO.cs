@@ -53,12 +53,20 @@ namespace DataAccessObjects
             return _context.Users
                 .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
+                .Include(x => x.Orders)
+                .ThenInclude(x => x.OrderDetails)
+                .Include(x => x.Blogs)
+                .Include(x => x.Carts)
                 .ToList();
         }
 
         public User GetUserById(int id)
         {
             return _context.Users
+                .Include(x => x.Orders)
+                .ThenInclude(x => x.OrderDetails)
+                .Include(x => x.Blogs)
+                .Include(x => x.Carts)
                 .FirstOrDefault(x => x.Id == id);
         }
 
