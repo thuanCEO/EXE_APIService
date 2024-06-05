@@ -22,72 +22,83 @@ namespace ShopServiceAPISystem.Controllers
         [Route("GetAllShippings")]
         public async Task<IActionResult> GetAllShippings()
         {
-            var response = await _shippingService.GetAllShippings();
-            if (!response.Success)
+            var shippings = await _shippingService.GetAllShippings();
+            if (shippings == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(shippings);
         }
 
         [HttpGet]
         [Route("GetShippingById/{id}")]
         public async Task<IActionResult> GetShippingById(int id)
         {
-            var response = await _shippingService.GetShippingById(id);
-            if (!response.Success)
+            var shipping = await _shippingService.GetShippingById(id);
+            if (shipping == null)
             {
-                return NotFound(response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(shipping);
         }
 
         [HttpPost]
         [Route("CreateShipping")]
         public async Task<IActionResult> CreateShipping([FromBody] RequestShippingDTO shippingDTO)
         {
-            var response = await _shippingService.CreateShipping(shippingDTO);
-            if (!response.Success)
+            var shippingId = await _shippingService.CreateShipping(shippingDTO);
+            if (shippingId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error creating shipping");
             }
-            return Ok(response);
+
+            var createdShipping = await _shippingService.GetShippingById(shippingId);
+            if (createdShipping == null)
+            {
+                return StatusCode(500, "Error fetching newly created shipping");
+            }
+
+            return CreatedAtAction(nameof(GetShippingById), new { id = createdShipping.Id }, createdShipping);
         }
 
         [HttpPut]
         [Route("UpdateShipping/{id}")]
         public async Task<IActionResult> UpdateShipping(int id, [FromBody] RequestShippingDTO shippingDTO)
         {
-            var response = await _shippingService.UpdateShipping(id, shippingDTO);
-            if (!response.Success)
+
+            var shippingId = await _shippingService.UpdateShipping(id, shippingDTO);
+            if (shippingId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error updating shipping");
             }
-            return Ok(response);
+
+            var updatedShipping = await _shippingService.GetShippingById(id);
+
+            return Ok(updatedShipping);
         }
 
         [HttpDelete]
         [Route("DeleteShipping/{id}")]
         public async Task<IActionResult> DeleteShipping(int id)
         {
-            var response = await _shippingService.DeleteShipping(id);
-            if (!response.Success)
+            var message = await _shippingService.DeleteShipping(id);
+            if (message == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(message);
         }
 
         [HttpPut]
         [Route("UpdateShippingStatus/{id}/{status}")]
         public async Task<IActionResult> UpdateShippingStatus(int id, int status)
         {
-            var response = await _shippingService.UpdateShippingStatus(id, status);
-            if (!response.Success)
+            var shipping = await _shippingService.UpdateShippingStatus(id, status);
+            if (shipping == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(shipping);
         }
     }
 }
