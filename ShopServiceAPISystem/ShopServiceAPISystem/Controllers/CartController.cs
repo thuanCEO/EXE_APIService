@@ -22,73 +22,82 @@ namespace ShopServiceAPISystem.Controllers
         [Route("GetAllCarts")]
         public async Task<IActionResult> GetAllCarts()
         {
-            var response = await _cartService.GetAllCarts();
-            if (!response.Success)
+            var carts = await _cartService.GetAllCarts();
+            if (carts == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(carts);
         }
 
         [HttpGet]
         [Route("GetCartById/{id}")]
         public async Task<IActionResult> GetCartById(int id)
         {
-            var response = await _cartService.GetCartById(id);
-            if (!response.Success)
+            var cart = await _cartService.GetCartById(id);
+            if (cart == null)
             {
-                return NotFound(response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(cart);
         }
 
         [HttpPost]
         [Route("CreateCart")]
         public async Task<IActionResult> CreateCart([FromBody] RequestCartDTO cartDTO)
         {
-
-            var response = await _cartService.CreateCart(cartDTO);
-            if (!response.Success)
+            var cartId = await _cartService.CreateCart(cartDTO);
+            if (cartId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error creating cart");
             }
-            return CreatedAtAction(nameof(GetCartById), new { id = response.Data }, response);
+
+            var createdCart = await _cartService.GetCartById(cartId);
+            if (createdCart == null)
+            {
+                return StatusCode(500, "Error fetching newly created cart");
+            }
+
+            return CreatedAtAction(nameof(GetCartById), new { id = createdCart.Id }, createdCart);
         }
 
         [HttpPut]
         [Route("UpdateCart/{id}")]
         public async Task<IActionResult> UpdateCart(int id, [FromBody] RequestCartDTO cartDTO)
         {
-            var response = await _cartService.UpdateCart(id, cartDTO);
-            if (!response.Success)
+            var cartId = await _cartService.UpdateCart(id, cartDTO);
+            if (cartId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error updating cart");
             }
-            return Ok(response);
+
+            var updatedCart = await _cartService.GetCartById(id);
+
+            return Ok(updatedCart);
         }
 
         [HttpDelete]
         [Route("DeleteCart/{id}")]
         public async Task<IActionResult> DeleteCart(int id)
         {
-            var response = await _cartService.DeleteCart(id);
-            if (!response.Success)
+            var message = await _cartService.DeleteCart(id);
+            if (message == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(message);
         }
 
         [HttpPut]
         [Route("UpdateCartStatus/{id}/{status}")]
         public async Task<IActionResult> UpdateCartStatus(int id, int status)
         {
-            var response = await _cartService.UpdateCartStatus(id, status);
-            if (!response.Success)
+            var cart = await _cartService.UpdateCartStatus(id, status);
+            if (cart == null)
             {
-                return StatusCode(500, response);
+                return NotFound();
             }
-            return Ok(response);
+            return Ok(cart);
         }
     }
 }

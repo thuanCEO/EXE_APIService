@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
 using DTOs.vouchers;
-using Repository.Implementation;
 using Repository.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,154 +18,62 @@ namespace Service
             _mapper = mapper;
         }
 
-        public async Task<DataResponse<List<ResponseVoucherDTO>>> GetAllVouchers()
+        public async Task<List<ResponseVoucherDTO>> GetAllVouchers()
         {
-            var response = new DataResponse<List<ResponseVoucherDTO>>();
-            try
-            {
-                var vouchers = await Task.Run(() => _voucherRepository.GetAllVouchers());
-                response.Data = _mapper.Map<List<ResponseVoucherDTO>>(vouchers);
-                response.Success = true;
-                response.Message = "Vouchers retrieved successfully.";
-            }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            var vouchers = await Task.Run(() => _voucherRepository.GetAllVouchers());
+            return _mapper.Map<List<ResponseVoucherDTO>>(vouchers);
         }
 
-        public async Task<DataResponse<ResponseVoucherDTO>> GetVoucherById(int id)
+        public async Task<ResponseVoucherDTO> GetVoucherById(int id)
         {
-            var response = new DataResponse<ResponseVoucherDTO>();
-            try
+            var voucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
+            if (voucher == null)
             {
-                var voucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
-                if (voucher == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Voucher not found.";
-                }
-                else
-                {
-                    response.Data = _mapper.Map<ResponseVoucherDTO>(voucher);
-                    response.Success = true;
-                    response.Message = "Voucher retrieved successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            return _mapper.Map<ResponseVoucherDTO>(voucher);
         }
 
-        public async Task<DataResponse<int>> CreateVoucher(RequestVoucherDTO voucherDTO)
+        public async Task<int> CreateVoucher(RequestVoucherDTO voucherDTO)
         {
-            var response = new DataResponse<int>();
-            try
-            {
-                var voucher = _mapper.Map<Voucher>(voucherDTO);
-                await Task.Run(() => _voucherRepository.CreateVoucher(voucher));
-                response.Data = _mapper.Map<ResponseVoucherDTO>(voucher);
-                response.Success = true;
-                response.Message = "Voucher created successfully.";
-            }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            var voucher = _mapper.Map<Voucher>(voucherDTO);
+            await Task.Run(() => _voucherRepository.CreateVoucher(voucher));
+            return voucher.Id;
         }
 
-        public async Task<DataResponse<int>> UpdateVoucher(int id, RequestVoucherDTO voucherDTO)
+        public async Task<int> UpdateVoucher(int id, RequestVoucherDTO voucherDTO)
         {
-            var response = new DataResponse<int>();
-            try
+            var voucherToUpdate = await Task.Run(() => _voucherRepository.GetVoucherById(id));
+            if (voucherToUpdate == null)
             {
-                var voucherToUpdate = await Task.Run(() => _voucherRepository.GetVoucherById(id));
-                if (voucherToUpdate == null)
-                {
-                    response.Data = 0;
-                    response.Success = false;
-                    response.Message = "Voucher not found.";
-                }
-                else
-                {
-                    _mapper.Map(voucherDTO, voucherToUpdate);
-                    await Task.Run(() => _voucherRepository.UpdateVoucher(voucherToUpdate));
-                    response.Data = _mapper.Map<ResponseVoucherDTO>(voucherToUpdate);
-                    response.Success = true;
-                    response.Message = "Voucher updated successfully.";
-                }
+                return 0;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            _mapper.Map(voucherDTO, voucherToUpdate);
+            await Task.Run(() => _voucherRepository.UpdateVoucher(voucherToUpdate));
+            return voucherToUpdate.Id;
         }
 
-        public async Task<DataResponse<string>> DeleteVoucher(int id)
+        public async Task<string> DeleteVoucher(int id)
         {
-            var response = new DataResponse<string>();
-            try
+            var voucherToDelete = await Task.Run(() => _voucherRepository.GetVoucherById(id));
+            if (voucherToDelete == null)
             {
-                var serviceToDelete = await Task.Run(() => _voucherRepository.GetVoucherById(id));
-                if (serviceToDelete == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Voucher not found.";
-                }
-                else
-                {
-                    await Task.Run(() => _voucherRepository.DeleteVoucher(id));
-                    response.Data = "Voucher deleted successfully.";
-                    response.Success = true;
-                    response.Message = "Voucher deleted successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            await Task.Run(() => _voucherRepository.DeleteVoucher(id));
+            return "Voucher deleted successfully.";
         }
 
-        public async Task<DataResponse<ResponseVoucherDTO>> UpdateVoucherStatus(int id, int status)
+        public async Task<ResponseVoucherDTO> UpdateVoucherStatus(int id, int status)
         {
-            var response = new DataResponse<ResponseVoucherDTO>();
-            try
+            var voucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
+            if (voucher == null)
             {
-                var voucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
-                if (voucher == null)
-                {
-                    response.Data = null;
-                    response.Success = false;
-                    response.Message = "Voucher not found.";
-                }
-                else
-                {
-                    await Task.Run(() => _voucherRepository.UpdateVoucherStatus(id, status));
-                    var updatedVoucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
-                    response.Data = _mapper.Map<ResponseVoucherDTO>(updatedVoucher);
-                    response.Success = true;
-                    response.Message = "Voucher status updated successfully.";
-                }
+                return null;
             }
-            catch (Exception ex)
-            {
-                response.Message = "Oops! Something went wrong. Please try again.\n" + ex.Message;
-                response.Success = false;
-            }
-            return response;
+            await Task.Run(() => _voucherRepository.UpdateVoucherStatus(id, status));
+            var updatedVoucher = await Task.Run(() => _voucherRepository.GetVoucherById(id));
+            return _mapper.Map<ResponseVoucherDTO>(updatedVoucher);
         }
     }
 }

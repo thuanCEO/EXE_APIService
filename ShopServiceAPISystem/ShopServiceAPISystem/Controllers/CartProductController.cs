@@ -23,72 +23,82 @@ namespace ShopServiceAPISystem.Controllers
         [Route("GetAllCartProducts")]
         public async Task<IActionResult> GetAllCartProducts()
         {
-            var response = await _cartProductService.GetAllCartProducts();
-            if (!response.Success)
+            var cartProducts = await _cartProductService.GetAllCartProducts();
+            if (cartProducts == null || cartProducts.Count == 0)
             {
-                return StatusCode(500, response);
+                return NotFound("No cart products found");
             }
-            return Ok(response);
+            return Ok(cartProducts);
         }
 
         [HttpGet]
         [Route("GetCartProductById/{id}")]
         public async Task<IActionResult> GetCartProductById(int id)
         {
-            var response = await _cartProductService.GetCartProductById(id);
-            if (!response.Success)
+            var cartProduct = await _cartProductService.GetCartProductById(id);
+            if (cartProduct == null)
             {
-                return NotFound(response);
+                return NotFound("Cart product not found");
             }
-            return Ok(response);
+            return Ok(cartProduct);
         }
 
         [HttpPost]
         [Route("CreateCartProduct")]
         public async Task<IActionResult> CreateCartProduct([FromBody] RequestCartProductDTO cartProductDTO)
         {
-            var response = await _cartProductService.CreateCartProduct(cartProductDTO);
-            if (!response.Success)
+            var cartProductId = await _cartProductService.CreateCartProduct(cartProductDTO);
+            if (cartProductId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error creating cart product");
             }
-            return CreatedAtAction(nameof(GetCartProductById), new { id = response.Data }, response);
+
+            var createdCartProduct = await _cartProductService.GetCartProductById(cartProductId);
+            if (createdCartProduct == null)
+            {
+                return StatusCode(500, "Error fetching newly created cart product");
+            }
+
+            return CreatedAtAction(nameof(GetCartProductById), new { id = createdCartProduct.Id }, createdCartProduct);
         }
 
         [HttpPut]
         [Route("UpdateCartProduct/{id}")]
         public async Task<IActionResult> UpdateCartProduct(int id, [FromBody] RequestCartProductDTO cartProductDTO)
         {
-            var response = await _cartProductService.UpdateCartProduct(id, cartProductDTO);
-            if (!response.Success)
+            var cartProductId = await _cartProductService.UpdateCartProduct(id, cartProductDTO);
+            if (cartProductId == 0)
             {
-                return StatusCode(500, response);
+                return StatusCode(500, "Error updating cart product");
             }
-            return Ok(response);
+
+            var updatedCartProduct = await _cartProductService.GetCartProductById(id);
+
+            return Ok(updatedCartProduct);
         }
 
         [HttpDelete]
         [Route("DeleteCartProduct/{id}")]
         public async Task<IActionResult> DeleteCartProduct(int id)
         {
-            var response = await _cartProductService.DeleteCartProduct(id);
-            if (!response.Success)
+            var success = await _cartProductService.DeleteCartProduct(id);
+            if (!success)
             {
-                return StatusCode(500, response);
+                return NotFound("Cart product not found");
             }
-            return Ok(response);
+            return Ok("Cart product deleted successfully.");
         }
 
         [HttpPut]
         [Route("UpdateCartProductStatus/{id}/{status}")]
         public async Task<IActionResult> UpdateCartProductStatus(int id, int status)
         {
-            var response = await _cartProductService.UpdateCartProductStatus(id, status);
-            if (!response.Success)
+            var cartProduct = await _cartProductService.UpdateCartProductStatus(id, status);
+            if (cartProduct == null)
             {
-                return StatusCode(500, response);
+                return NotFound("Cart product not found");
             }
-            return Ok(response);
+            return Ok(cartProduct);
         }
     }
 }
