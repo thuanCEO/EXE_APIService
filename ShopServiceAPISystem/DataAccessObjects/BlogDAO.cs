@@ -50,12 +50,14 @@ namespace DataAccessObjects
             return _context.Blogs
                 .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
+                .Include(x => x.User)
                 .ToList();
         }
 
         public Blog GetBlogById(int id)
         {
             return _context.Blogs
+                .Include(x => x.User)
                 .FirstOrDefault(x => x.Id == id);
         }
     }

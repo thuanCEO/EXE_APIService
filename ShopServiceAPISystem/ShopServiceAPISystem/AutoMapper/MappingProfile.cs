@@ -8,6 +8,8 @@ using DTOs.Feedbacks;
 using DTOs.Services;
 using DTOs.shippings;
 using DTOs.vouchers;
+using DTOs.Create;
+using DTOs.Update;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +22,16 @@ namespace ShopServiceAPISystem.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<UserDTO, User>();
+            CreateMap<CreateUserDTO, User>();
             CreateMap<UpdateUserDTO, User>();
-            CreateMap<ProductDTO, Product>();
-            CreateMap<BlogDTO, Blog>();
-            CreateMap<OrderDTO, Order>();
-            CreateMap<OrderDetailDTO, OrderDetail>();
+            CreateMap<CreateProductDTO, Product>();
+            CreateMap<UpdateProductDTO, Product>();
+            CreateMap<CreateBlogDTO, Blog>();
+            CreateMap<UpdateBlogDTO, Blog>();
+            CreateMap<CreateOrderDTO, Order>();
+            CreateMap<UpdateOrderDTO, Order>();
+            CreateMap<CreateOrderDetailDTO, OrderDetail>();
+            CreateMap<UpdateOrderDetailDTO, OrderDetail>();
             CreateMap<RequestCategoryDTO, Category>();
             CreateMap<ResponseCategoryDTO, Category>();
             CreateMap<Feedback, ResponseFeedbackDTO>()

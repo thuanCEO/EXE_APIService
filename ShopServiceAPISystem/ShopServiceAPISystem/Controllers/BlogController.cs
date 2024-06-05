@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
+using DTOs.Create;
+using DTOs.Update;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service;
@@ -35,7 +36,7 @@ namespace ShopServiceAPISystem.Controllers
 
     [HttpPost]
     [Route("CreateBlog")]
-    public IActionResult CreateBlog([FromBody] BlogDTO blogDTO)
+    public IActionResult CreateBlog([FromBody] CreateBlogDTO blogDTO)
     {
         Blog blog = _mapper.Map<Blog>(blogDTO);
         _blogService.CreateBlog(blog);
@@ -44,7 +45,7 @@ namespace ShopServiceAPISystem.Controllers
 
     [HttpPut]
     [Route("UpdateBlog")]
-    public IActionResult UpdateBlog([FromBody] BlogDTO blogDTO, int id)
+    public IActionResult UpdateBlog([FromBody] UpdateBlogDTO blogDTO, int id)
     {
         var blog = _mapper.Map<Blog>(blogDTO);
         blog.Id = id;

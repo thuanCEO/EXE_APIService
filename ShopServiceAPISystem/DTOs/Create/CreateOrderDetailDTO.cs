@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs
+namespace DTOs.Create
 {
-    public class OrderDetailDTO
+    public class CreateOrderDetailDTO
     {
         public int? ProductId { get; set; }
         public int? Quantity { get; set; }

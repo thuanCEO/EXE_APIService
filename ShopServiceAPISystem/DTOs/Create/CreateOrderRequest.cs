@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs
+namespace DTOs.Create
 {
     public class CreateOrderRequest
     {
-        public OrderDTO OrderDTO { get; set; }
-        public List<OrderDetailDTO> OrderDetailDTO { get; set; }
+        public CreateOrderDTO OrderDTO { get; set; }
+        public List<CreateOrderDetailDTO> OrderDetailDTO { get; set; }
     }
 }
