@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT-CN8\\EXE202\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {}
+    "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {}
   },
   "projects": {
-    "D:\\FPT-CN8\\EXE202\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT-CN8\\EXE202\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\FPT-CN8\\EXE202\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT-CN8\\EXE202\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\Quanglatui\\.nuget\\packages\\",
+        "outputPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Quanglatui\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -94,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
