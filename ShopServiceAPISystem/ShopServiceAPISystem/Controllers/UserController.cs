@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
+using DTOs.Create;
+using DTOs.Update;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 
@@ -47,7 +48,7 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPost]
         [Route("CreateUser")]
-        public IActionResult Create([FromBody] UserDTO userDTO)
+        public IActionResult Create([FromBody] CreateUserDTO userDTO)
         {
             User user = _mapper.Map<User>(userDTO);
             _userService.CreateUser(user);

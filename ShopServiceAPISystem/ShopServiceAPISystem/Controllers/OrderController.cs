@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
+using DTOs.Create;
+using DTOs.Update;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service;
@@ -45,7 +46,7 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPut]
         [Route("UpdateOrder")]
-        public IActionResult UpdateOrder([FromBody] OrderDTO orderDTO, int id)
+        public IActionResult UpdateOrder([FromBody] UpdateOrderDTO orderDTO, int id)
         {
             var order = _mapper.Map<Order>(orderDTO);
             order.Id = id;

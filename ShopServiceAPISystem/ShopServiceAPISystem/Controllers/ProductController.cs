@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BusinessObjects.Models;
-using DTOs;
+using DTOs.Create;
+using DTOs.Update;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Mysqlx.Crud;
 using Service;
 
 namespace ShopServiceAPISystem.Controllers
@@ -35,7 +37,7 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPost]
         [Route("CreateProduct")]
-        public IActionResult CreateProduct([FromBody] ProductDTO productDTO)
+        public IActionResult CreateProduct([FromBody] CreateProductDTO productDTO)
         {
             Product product = _mapper.Map<Product>(productDTO);
             _productService.CreateProduct(product);
@@ -44,7 +46,7 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPut]
         [Route("UpdateProduct")]
-        public IActionResult UpdateProduct([FromBody] ProductDTO productDTO, int id)
+        public IActionResult UpdateProduct([FromBody] UpdateProductDTO productDTO, int id)
         {
             var product = _mapper.Map<Product>( productDTO);
             product.Id = id;
