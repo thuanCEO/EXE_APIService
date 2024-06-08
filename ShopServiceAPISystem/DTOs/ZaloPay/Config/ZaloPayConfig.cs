@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTOs.ZaloPay.Config
+﻿namespace DTOs.ZaloPay.Config
 {
     public class ZaloPayConfig
     {
@@ -13,7 +7,7 @@ namespace DTOs.ZaloPay.Config
         public string PaymentUrl { get; set; } = string.Empty;
         public string RedirectUrl { get; set; } = string.Empty;
         public string IpnUrl { get; set; } = string.Empty;
-        public string AppId { get; set; } = string.Empty;
+        public int AppId { get; set; }
         public string Key1 { get; set; } = string.Empty;
         public string Key2 { get; set; } = string.Empty;
     }

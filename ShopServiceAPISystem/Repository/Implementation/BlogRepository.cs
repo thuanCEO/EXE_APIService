@@ -1,15 +1,10 @@
 ﻿using BusinessObjects.Models;
 using DataAccessObjects;
 using Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository.Implementation
 {
-    public class BlogRepository :IBlogRepository
+    public class BlogRepository : IBlogRepository
     {
         private readonly BlogDAO _dao;
         public BlogRepository(BlogDAO dao)

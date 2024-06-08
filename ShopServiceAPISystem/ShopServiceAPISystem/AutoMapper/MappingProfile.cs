@@ -2,11 +2,6 @@
 using BusinessObjects.Models;
 using DTOs.Create;
 using DTOs.Update;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopServiceAPISystem.AutoMapper
 {

@@ -1,11 +1,6 @@
 ﻿using BusinessObjects.Models;
 using DataAccessObjects;
 using Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository.Implementation
 {
@@ -19,7 +14,7 @@ namespace Repository.Implementation
 
         public void CreateOrder(Order order, List<OrderDetail> listOrderDetail)
         {
-            _dao.CreateOrder(order,listOrderDetail);
+            _dao.CreateOrder(order, listOrderDetail);
         }
 
         public bool DeleteOrder(int id)

@@ -1,10 +1,5 @@
 ﻿using BusinessObjects.Models;
 using Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service
 {
@@ -28,7 +23,7 @@ namespace Service
 
         public void CreateOrder(Order order, List<OrderDetail> listOrderDetail)
         {
-            _orderRepository.CreateOrder(order,listOrderDetail);
+            _orderRepository.CreateOrder(order, listOrderDetail);
         }
         public void UpdateOrder(Order order)
         {
