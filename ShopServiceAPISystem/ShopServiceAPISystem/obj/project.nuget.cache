@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6jQbZ5JelVfr9zX4kUIMKAoy+HtgTDLkA3NEEQb7foMZuBO4bqmY8kd+KkmHkrXAjbYmnZcYcvaGFaTwaH5oBg==",
+  "dgSpecHash": "d/HqQqnifn5n48SiuXVML11la+iy2O5PAX3xqpK3y/TqkRp8VcmwujEXujRMFLKAqtyPS7spszLRr0Fx1xJzZA==",
   "success": true,
   "projectFilePath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\Quanglatui\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\mysql.data\\8.4.0\\mysql.data.8.4.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.27\\mysql.entityframeworkcore.6.0.27.nupkg.sha512",
+    "C:\\Users\\Quanglatui\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Quanglatui\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

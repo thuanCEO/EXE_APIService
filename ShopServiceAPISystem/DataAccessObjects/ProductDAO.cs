@@ -1,10 +1,5 @@
 ﻿using BusinessObjects.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessObjects
 {
@@ -34,7 +29,7 @@ namespace DataAccessObjects
         public bool DeleteProduct(int id)
         {
             var product = _context.Products.Find(id);
-            if(product == null)
+            if (product == null)
                 return false;
             if (product != null)
             {
@@ -45,11 +40,11 @@ namespace DataAccessObjects
             return true;
         }
 
-           public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts()
         {
             return _context.Products
                 .Where(x => x.Status != 0)
-                .OrderByDescending(x =>x.Id)
+                .OrderByDescending(x => x.Id)
                 .Include(x => x.Feedbacks)
                 .ToList();
         }

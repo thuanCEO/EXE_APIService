@@ -2,9 +2,7 @@
 using BusinessObjects.Models;
 using DTOs.Create;
 using DTOs.Update;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Mysqlx.Crud;
 using Service;
 
 namespace ShopServiceAPISystem.Controllers
@@ -48,7 +46,7 @@ namespace ShopServiceAPISystem.Controllers
         [Route("UpdateProduct")]
         public IActionResult UpdateProduct([FromBody] UpdateProductDTO productDTO, int id)
         {
-            var product = _mapper.Map<Product>( productDTO);
+            var product = _mapper.Map<Product>(productDTO);
             product.Id = id;
             _productService.UpdateProduct(product);
             return Ok("Update thành công");
@@ -64,7 +62,7 @@ namespace ShopServiceAPISystem.Controllers
             }
             else
                 return StatusCode(500, "Không tồn tại Id này");
-            
+
         }
     }
 }

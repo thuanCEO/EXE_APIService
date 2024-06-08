@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using BusinessObjects.Models;
-using DTOs;
+﻿using BusinessObjects.Models;
 using Repository.Interfaces;
 
 namespace Service

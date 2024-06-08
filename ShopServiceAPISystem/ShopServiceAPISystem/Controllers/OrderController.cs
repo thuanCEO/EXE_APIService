@@ -2,7 +2,6 @@
 using BusinessObjects.Models;
 using DTOs.Create;
 using DTOs.Update;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 
@@ -40,7 +39,7 @@ namespace ShopServiceAPISystem.Controllers
         {
             Order order = _mapper.Map<Order>(request.OrderDTO);
             List<OrderDetail> listOrderDetail = _mapper.Map<List<OrderDetail>>(request.OrderDetailDTO);
-            _orderService.CreateOrder(order,listOrderDetail);
+            _orderService.CreateOrder(order, listOrderDetail);
             return Created("", "Tạo thành công");
         }
 
