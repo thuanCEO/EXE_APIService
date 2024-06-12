@@ -28,7 +28,6 @@ namespace DataAccessObjects
         public void UpdateOrder(Order order)
         {
             Order existingOrder = _context.Orders.FirstOrDefault(p => p.Id == order.Id);
-            order.Status = existingOrder.Status;
             _context.Entry(existingOrder).CurrentValues.SetValues(order);
             _context.SaveChanges();
         }
