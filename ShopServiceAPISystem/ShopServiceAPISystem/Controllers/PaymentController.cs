@@ -98,7 +98,7 @@ namespace ShopServiceAPISystem.Controllers
             param.Add("mac", HmacHelper.Compute(ZaloPayHMAC.HMACSHA256, key1, data));
 
             var result = await HttpHelper.PostFormAsync(create_order_url, param);
-            var order = _mapper.Map<Order>(orderDTO);
+            //var order = _mapper.Map<Order>(orderDTO);
             return Ok(result);
         }
 
