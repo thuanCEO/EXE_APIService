@@ -49,7 +49,6 @@ namespace DataAccessObjects
         public List<Order> GetAllOrders()
         {
             return _context.Orders
-                .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
                 .Include(x => x.OrderDetails).ThenInclude(x => x.Product)
                 .Include(x => x.Voucher)

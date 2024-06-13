@@ -21,7 +21,6 @@ namespace DataAccessObjects
         public void UpdateBlog(Blog blog)
         {
             Blog existingBlog = _context.Blogs.FirstOrDefault(p => p.Id == blog.Id);
-            blog.Status = existingBlog.Status;
             _context.Entry(existingBlog).CurrentValues.SetValues(blog);
             _context.SaveChanges();
         }
@@ -43,7 +42,6 @@ namespace DataAccessObjects
         public List<Blog> GetAllBlogs()
         {
             return _context.Blogs
-                .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
                 .Include(x => x.User)
                 .ToList();

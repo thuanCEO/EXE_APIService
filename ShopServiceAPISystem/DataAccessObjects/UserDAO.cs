@@ -29,7 +29,6 @@ namespace DataAccessObjects
         public void UpdateUser(User user)
         {
             User existingUser = _context.Users.FirstOrDefault(p => p.Id == user.Id);
-            user.Status = existingUser.Status;
             _context.Entry(existingUser).CurrentValues.SetValues(user);
             _context.SaveChanges();
         }
@@ -51,7 +50,6 @@ namespace DataAccessObjects
         public List<User> GetAllUsers()
         {
             return _context.Users
-                .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
                 .Include(x => x.Orders)
                 .ThenInclude(x => x.OrderDetails)

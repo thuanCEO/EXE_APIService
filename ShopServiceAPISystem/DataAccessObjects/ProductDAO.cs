@@ -21,7 +21,6 @@ namespace DataAccessObjects
         public void UpdateProduct(Product product)
         {
             Product existingProduct = _context.Products.FirstOrDefault(p => p.Id == product.Id);
-            product.Status = existingProduct.Status;
             _context.Entry(existingProduct).CurrentValues.SetValues(product);
             _context.SaveChanges();
         }
@@ -43,7 +42,6 @@ namespace DataAccessObjects
         public List<Product> GetAllProducts()
         {
             return _context.Products
-                .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
                 .Include(x => x.Feedbacks)
                 .ToList();
