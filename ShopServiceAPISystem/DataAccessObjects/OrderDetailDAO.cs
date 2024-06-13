@@ -21,7 +21,6 @@ namespace DataAccessObjects
         public void UpdateOrderDetail(OrderDetail orderDetail)
         {
             OrderDetail existingOrderDetail = _context.OrderDetails.FirstOrDefault(p => p.Id == orderDetail.Id);
-            orderDetail.Status = existingOrderDetail.Status;
             _context.Entry(existingOrderDetail).CurrentValues.SetValues(orderDetail);
             _context.SaveChanges();
         }
@@ -43,7 +42,6 @@ namespace DataAccessObjects
         public List<OrderDetail> GetAllOrderDetails()
         {
             return _context.OrderDetails
-                .Where(x => x.Status != 0)
                 .OrderByDescending(x => x.Id)
                 .Include(x => x.Product)
                 .ToList();
