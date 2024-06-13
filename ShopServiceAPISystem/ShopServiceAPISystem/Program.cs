@@ -93,6 +93,9 @@ namespace ShopServiceAPISystem
                 app.UseSwaggerUI();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
             app.UseHttpsRedirection();
 
             app.UseCors();
