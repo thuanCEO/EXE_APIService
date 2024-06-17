@@ -43,7 +43,7 @@ namespace ShopServiceAPISystem.Controllers
                 return NotFound("Sai tên đăng nhập hoặc mật khẩu");
             }
 
-            return Ok(_userService.GenerateToken(user));
+            return Ok(user);
         }
 
         [HttpPost]
