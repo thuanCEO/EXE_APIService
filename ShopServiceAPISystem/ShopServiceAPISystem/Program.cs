@@ -33,7 +33,7 @@ namespace ShopServiceAPISystem
             {
                 options.AddDefaultPolicy(policyBuilder =>
                 {
-                    policyBuilder.WithOrigins("http://localhost:3000")
+                    policyBuilder.WithOrigins("https://realityprint.vercel.app")
                                  .AllowAnyHeader()
                                  .AllowAnyMethod();
                 });
