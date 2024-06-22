@@ -1,4 +1,6 @@
-﻿namespace DTOs.Update
+﻿using Microsoft.AspNetCore.Http;
+
+namespace DTOs.Update
 {
     public class UpdateUserDTO
     {
@@ -8,7 +10,7 @@
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
-        public string Avatar { get; set; }
+        public IFormFile? Image { get; set; }
         public int? Status { get; set; }
         public int? RoleId { get; set; }
     }

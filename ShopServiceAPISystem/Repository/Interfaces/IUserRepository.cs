@@ -1,4 +1,6 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.AspNetCore.Http;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Repository.Interfaces
 {
@@ -8,7 +10,7 @@ namespace Repository.Interfaces
         User GetUserById(int id);
         User Login(string userName, string password);
         void CreateUser(User user);
-        void UpdateUser(User user);
+        Task UpdateUser(User user, IFormFile image);
         void DeleteUser(int id);
         string GenerateToken(User user);
     }

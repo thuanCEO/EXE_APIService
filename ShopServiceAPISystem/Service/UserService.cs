@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.AspNetCore.Http;
 using Repository.Interfaces;
 
 namespace Service
@@ -34,9 +35,9 @@ namespace Service
         {
             _userRepository.DeleteUser(id);
         }
-        public void UpdateUser(User user)
+        public async Task UpdateUser(User user, IFormFile image)
         {
-            _userRepository.UpdateUser(user);
+            await _userRepository.UpdateUser(user, image);
         }
         public void CreateUser(User user)
         {

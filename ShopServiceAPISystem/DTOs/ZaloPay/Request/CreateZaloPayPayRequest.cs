@@ -1,6 +1,6 @@
 ﻿using DTOs.ZaloPay.Response;
-using ShopServiceAPISystem.Helpers;
 using Newtonsoft.Json;
+using ShopServiceAPISystem.Helpers;
 
 namespace DTOs.ZaloPay.Request
 {
@@ -31,7 +31,7 @@ namespace DTOs.ZaloPay.Request
 
         public void MakeSignature(string key)
         {
-            var data = AppId + "|" + AppTransId + "|" + AppUser + "|" + Amount + "|" + AppTime + "|" +  "|";
+            var data = AppId + "|" + AppTransId + "|" + AppUser + "|" + Amount + "|" + AppTime + "|" + "|";
             this.Mac = HashHelper.HmacSHA256(data, key);
         }
 
@@ -74,7 +74,7 @@ namespace DTOs.ZaloPay.Request
             {
                 return (false, response.ReasonPhrase ?? String.Empty);
             }
-            }
         }
     }
+}
 

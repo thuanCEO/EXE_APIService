@@ -1,10 +1,11 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Repository.Interfaces
 {
     public interface IProductRepository
     {
-        void CreateProduct(Product product);
+        Task CreateProduct(Product product, IFormFile image);
         void UpdateProduct(Product product);
         bool DeleteProduct(int id);
         List<Product> GetAllProducts();

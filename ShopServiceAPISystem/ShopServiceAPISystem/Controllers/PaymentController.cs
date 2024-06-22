@@ -1,14 +1,9 @@
-﻿using DataAccessObjects;
-using DTOs.Update;
+﻿using DTOs.Update;
 using DTOs.ZaloPay.Config;
 using DTOs.ZaloPay.Request;
 using DTOs.ZaloPay.Response;
-using Google.Protobuf.WellKnownTypes;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Options;
-using Mysqlx.Crud;
 using Newtonsoft.Json;
 using ZaloPay.Helper;
 using ZaloPay.Helper.Crypto;
@@ -73,7 +68,7 @@ namespace ShopServiceAPISystem.Controllers
             }
         }
 
-        [HttpPost("create-order")]
+        [HttpPost("CreateOrder")]
         public async Task<IActionResult> CreateOrder([FromBody] UpdateOrderDTO orderDto)
         {
 
@@ -102,7 +97,7 @@ namespace ShopServiceAPISystem.Controllers
             return Ok(result);
         }
 
-        
+
     }
     public class CreatePaymentRequestModel
     {
@@ -115,5 +110,5 @@ namespace ShopServiceAPISystem.Controllers
         public string EmbedData { get; set; }
         public string BankCode { get; set; }
     }
-    
+
 }

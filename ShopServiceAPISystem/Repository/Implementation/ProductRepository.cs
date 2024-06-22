@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.Models;
 using DataAccessObjects;
+using Microsoft.AspNetCore.Http;
 using Repository.Interfaces;
 
 namespace Repository.Implementation
@@ -12,9 +13,9 @@ namespace Repository.Implementation
             _dao = dao;
         }
 
-        public void CreateProduct(Product product)
+        public async Task CreateProduct(Product product, IFormFile image)
         {
-            _dao.CreateProduct(product);
+            await _dao.CreateProduct(product, image);
         }
 
         public bool DeleteProduct(int id)
