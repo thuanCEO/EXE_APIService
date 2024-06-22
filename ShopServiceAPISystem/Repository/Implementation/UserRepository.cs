@@ -47,5 +47,9 @@ namespace Repository.Implementation
             return _dao.GenerateToken(user);
         }
 
+        public async Task<User> LoginGoogle(string idToken)
+        {
+            return await _dao.LoginGoogle(idToken);
+        }
     }
 }

@@ -13,5 +13,6 @@ namespace Repository.Interfaces
         Task UpdateUser(User user, IFormFile image);
         void DeleteUser(int id);
         string GenerateToken(User user);
+        Task<User> LoginGoogle(string idToken);
     }
 }
