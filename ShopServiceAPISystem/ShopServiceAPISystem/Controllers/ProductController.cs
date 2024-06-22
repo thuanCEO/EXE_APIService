@@ -35,10 +35,10 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPost]
         [Route("CreateProduct")]
-        public IActionResult CreateProduct([FromBody] CreateProductDTO productDTO)
+        public async Task<IActionResult> CreateProduct([FromForm] CreateProductDTO productDTO)
         {
             Product product = _mapper.Map<Product>(productDTO);
-            _productService.CreateProduct(product);
+            await _productService.CreateProduct(product, productDTO.Image);
             return Created("", "Tạo thành công");
         }
 

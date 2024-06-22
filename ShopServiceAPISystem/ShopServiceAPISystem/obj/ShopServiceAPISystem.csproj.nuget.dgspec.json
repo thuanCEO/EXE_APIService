@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "FirebaseAuthentication.net": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "FirebaseStorage.net": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -175,7 +183,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\BusinessObjects\\BusinessObjects.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

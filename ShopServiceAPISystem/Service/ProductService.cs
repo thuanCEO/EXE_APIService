@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.AspNetCore.Http;
 using Repository.Interfaces;
 
 namespace Service
@@ -21,9 +22,9 @@ namespace Service
             return _productRepository.GetProductById(id);
         }
 
-        public void CreateProduct(Product product)
+        public async Task CreateProduct(Product product, IFormFile image)
         {
-            _productRepository.CreateProduct(product);
+            await _productRepository.CreateProduct(product, image);
         }
         public void UpdateProduct(Product product)
         {

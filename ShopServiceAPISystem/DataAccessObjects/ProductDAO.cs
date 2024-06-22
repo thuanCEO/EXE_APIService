@@ -1,21 +1,34 @@
 ﻿using BusinessObjects.Models;
+using Firebase.Auth;
+using Firebase.Storage;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccessObjects
 {
     public class ProductDAO
     {
         private readonly bs6ow0djyzdo8teyhoz4Context _context;
-        public ProductDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly IConfiguration _configuration;
+
+        public ProductDAO(bs6ow0djyzdo8teyhoz4Context context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
-        public void CreateProduct(Product product)
+        public async Task CreateProduct(Product product, IFormFile image)
         {
+            if (image != null)
+            {
+                var imageUrl = await UploadImageToFirebase(image, product.ProductName);
+                product.ImageUrl = imageUrl;
+            }
+
             product.Status = 1;
             _context.Products.Add(product);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public void UpdateProduct(Product product)
@@ -54,6 +67,22 @@ namespace DataAccessObjects
                 .ThenInclude(x => x.User)
                 .Include(p => p.Category)
                 .FirstOrDefault(x => x.Id == id);
+        }
+        private async Task<string> UploadImageToFirebase(IFormFile image, string name)
+        {
+           
+            var stream = image.OpenReadStream();
+            var task = new FirebaseStorage(
+                _configuration["Firebase:Bucket"],
+                new FirebaseStorageOptions
+                {
+                    ThrowOnCancel = true
+                })
+                .Child("images")
+                .Child(DateTime.Now.ToString("yyyyMMddHHmmssfff") +"_"+ name)
+                .PutAsync(stream);
+
+            return await task;
         }
     }
 }

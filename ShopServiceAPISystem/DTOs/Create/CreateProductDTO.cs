@@ -1,4 +1,6 @@
-﻿namespace DTOs.Create
+﻿using Microsoft.AspNetCore.Http;
+
+namespace DTOs.Create
 {
     public class CreateProductDTO
     {
@@ -8,6 +10,6 @@
         public double? Price { get; set; }
         public int? Quantity { get; set; }
         public int? CategoryId { get; set; }
-        public string ImageUrl { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

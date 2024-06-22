@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.Models;
 using DataAccessObjects;
+using Microsoft.AspNetCore.Http;
 using Repository.Interfaces;
 
 namespace Repository.Implementation
@@ -36,9 +37,9 @@ namespace Repository.Implementation
             return _dao.Login(userName, password);
         }
 
-        public void UpdateUser(User user)
+        public async Task UpdateUser(User user, IFormFile image)
         {
-            _dao.UpdateUser(user);
+            await _dao.UpdateUser(user, image);
         }
 
         public string GenerateToken(User user)

@@ -57,11 +57,11 @@ namespace ShopServiceAPISystem.Controllers
 
         [HttpPut]
         [Route("UpdateUser")]
-        public IActionResult UpdateProduct([FromBody] UpdateUserDTO userDTO, int id)
+        public async Task<IActionResult> UpdateProduct([FromForm] UpdateUserDTO userDTO, int id)
         {
             var user = _mapper.Map<User>(userDTO);
             user.Id = id;
-            _userService.UpdateUser(user);
+            await _userService.UpdateUser(user, userDTO.Image);
             return Ok("Update thành công");
         }
 

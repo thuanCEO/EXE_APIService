@@ -1,10 +1,13 @@
 ﻿using BusinessObjects.Models;
+using Firebase.Storage;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DataAccessObjects
 {
@@ -26,11 +29,20 @@ namespace DataAccessObjects
             _context.SaveChanges();
         }
 
-        public void UpdateUser(User user)
+        public async Task UpdateUser(User user, IFormFile image)
         {
             User existingUser = _context.Users.FirstOrDefault(p => p.Id == user.Id);
+            if (image != null)
+            {
+                var imageUrl = await UploadImageToFirebase(image, existingUser.FullName);
+                user.Avatar = imageUrl;
+            }
+            else
+            {
+                user.Avatar = existingUser.Avatar;
+            }
             _context.Entry(existingUser).CurrentValues.SetValues(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public bool DeleteUser(int id)
@@ -97,6 +109,22 @@ namespace DataAccessObjects
             var token = jwtTokenHandler.CreateToken(tokenDescription);
 
             return jwtTokenHandler.WriteToken(token);
+        }
+        private async Task<string> UploadImageToFirebase(IFormFile image, string name)
+        {
+
+            var stream = image.OpenReadStream();
+            var task = new FirebaseStorage(
+                _configuration["Firebase:Bucket"],
+                new FirebaseStorageOptions
+                {
+                    ThrowOnCancel = true
+                })
+                .Child("images")
+                .Child(DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + name)
+                .PutAsync(stream);
+
+            return await task;
         }
     }
 }
