@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.Models;
 using Firebase.Storage;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -125,6 +126,48 @@ namespace DataAccessObjects
                 .PutAsync(stream);
 
             return await task;
+        }
+
+        public async Task<User> LoginGoogle(string idToken)
+        {
+            try
+            {
+                // Xác thực idToken và lấy thông tin người dùng từ Google
+                var payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
+
+                // Tìm người dùng trong cơ sở dữ liệu dựa trên email
+                var user = _context.Users.FirstOrDefault(u => u.Email == payload.Email);
+                if (user == null)
+                {
+                    // Tạo người dùng mới nếu không tồn tại
+                    user = new User
+                    {
+                        FullName = payload.Name,
+                        Email = payload.Email,
+                        Avatar = payload.Picture,
+                        UserName = payload.Email, // Sử dụng email làm tên người dùng
+                        Status = 1,
+                        RoleId = 3
+                    };
+                    _context.Users.Add(user);
+                }
+                else
+                {
+                    // Cập nhật người dùng hiện tại
+                    user.FullName = payload.Name;
+                    user.Avatar = payload.Picture;
+                    _context.Users.Update(user);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu idToken không hợp lệ
+                throw new Exception("Invalid Google token", ex);
+            }
         }
     }
 }

@@ -72,6 +72,12 @@ namespace ShopServiceAPISystem.Controllers
             _userService.DeleteUser(id);
             return Ok("Đã xóa");
         }
-
+        [HttpPost]
+        [Route("LoginGoogle")]
+        public async Task<IActionResult> LoginGoogle(string idToken)
+        {
+            User user = await _userService.LoginGoogle(idToken);
+            return Ok(user);
+        }
     }
 }

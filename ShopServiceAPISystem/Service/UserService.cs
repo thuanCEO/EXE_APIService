@@ -43,5 +43,9 @@ namespace Service
         {
             _userRepository.CreateUser(user);
         }
+        public async Task<User> LoginGoogle(string idToken)
+        {
+            return await _userRepository.LoginGoogle(idToken);
+        }
     }
 }
