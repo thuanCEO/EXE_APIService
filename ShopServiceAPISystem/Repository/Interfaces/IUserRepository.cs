@@ -17,5 +17,6 @@ namespace Repository.Interfaces
         int CountUsers(int? status = null);
         Task<bool> ForgotPassword(string email);
         Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null);
+        void UpdatePassword(int userId, string Password);
     }
 }
