@@ -65,5 +65,10 @@ namespace Repository.Implementation
         {
             await _dao.SendEmailAsync(toEmail, subject, message, attachments);
         }
+
+        public void UpdatePassword(int userId, string Password)
+        {
+            _dao.UpdatePassword(userId, Password);
+        }
     }
 }

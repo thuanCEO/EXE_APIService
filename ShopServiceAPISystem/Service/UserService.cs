@@ -61,5 +61,9 @@ namespace Service
         {
             await _userRepository.SendEmailAsync(toEmail, subject, message, attachments);
         }
+        public void UpdatePassword(int userId, string Password)
+        {
+            _userRepository.UpdatePassword(userId, Password);
+        }
     }
 }

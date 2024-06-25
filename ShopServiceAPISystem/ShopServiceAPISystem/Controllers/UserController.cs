@@ -116,5 +116,12 @@ namespace ShopServiceAPISystem.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("UpdatePassword")]
+        public IActionResult UpdatePassword(int userId, string Password)
+        {
+            _userService.UpdatePassword(userId, Password);
+            return Ok("Password updated successfully.");
+        }
     }
 }

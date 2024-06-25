@@ -237,5 +237,14 @@ namespace DataAccessObjects
                 await client.DisconnectAsync(true);
             }
         }
+        public void UpdatePassword(int userId, string Password)
+        {
+            var user = _context.Users.Find(userId);
+            if (user != null)
+            {
+                user.Password = Password;
+                _context.SaveChanges();
+            }
+        }
     }
 }
