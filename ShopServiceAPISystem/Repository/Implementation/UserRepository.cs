@@ -60,5 +60,10 @@ namespace Repository.Implementation
         {
             return _dao.ForgotPassword(email);
         }
+
+        public async Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            await _dao.SendEmailAsync(toEmail, subject, message, attachments);
+        }
     }
 }
