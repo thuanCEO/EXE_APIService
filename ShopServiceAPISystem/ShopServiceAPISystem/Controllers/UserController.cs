@@ -87,5 +87,18 @@ namespace ShopServiceAPISystem.Controllers
             int count = _userService.CountUsers(status);
             return Ok(count);
         }
+
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            bool result = await _userService.ForgotPassword(email);
+            if (!result)
+            {
+                return NotFound("User with given email does not exist.");
+            }
+
+            return Ok("New password has been sent to your email.");
+        }
     }
 }
