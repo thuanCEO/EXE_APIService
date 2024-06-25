@@ -15,5 +15,6 @@ namespace Repository.Interfaces
         string GenerateToken(User user);
         Task<User> LoginGoogle(string idToken);
         int CountUsers(int? status = null);
+        Task<bool> ForgotPassword(string email);
     }
 }

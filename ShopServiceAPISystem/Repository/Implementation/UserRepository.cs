@@ -55,5 +55,10 @@ namespace Repository.Implementation
         {
             return _dao.CountUsers(status);
         }
+
+        public Task<bool> ForgotPassword(string email)
+        {
+            return _dao.ForgotPassword(email);
+        }
     }
 }

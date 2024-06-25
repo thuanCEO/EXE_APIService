@@ -51,5 +51,10 @@ namespace Service
         {
             return _userRepository.CountUsers(status);
         }
+
+        public Task<bool> ForgotPassword(string email)
+        {
+            return _userRepository.ForgotPassword(email);
+        }
     }
 }
