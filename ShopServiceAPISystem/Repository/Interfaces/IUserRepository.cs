@@ -16,5 +16,6 @@ namespace Repository.Interfaces
         Task<User> LoginGoogle(string idToken);
         int CountUsers(int? status = null);
         Task<bool> ForgotPassword(string email);
+        Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null);
     }
 }

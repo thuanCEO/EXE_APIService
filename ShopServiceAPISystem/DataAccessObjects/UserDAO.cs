@@ -205,13 +205,29 @@ namespace DataAccessObjects
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private async Task SendEmailAsync(string email, string subject, string message)
+        public async Task SendEmailAsync(string email, string subject, string message, List<IFormFile> attachments = null)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("REALITY", "inreality0102@gmail.com")); // Thay "YourAppName" bằng tên ứng dụng của bạn
+            emailMessage.From.Add(new MailboxAddress("REALITY", "inreality0102@gmail.com")); // Thay "REALITY" và "inreality0102@gmail.com" bằng thông tin người gửi thực tế
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
-            emailMessage.Body = new TextPart("plain") { Text = message };
+
+            var builder = new BodyBuilder();
+            builder.HtmlBody = message;
+
+            if (attachments != null && attachments.Count > 0)
+            {
+                foreach (var attachment in attachments)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await attachment.CopyToAsync(memoryStream);
+                        builder.Attachments.Add(attachment.FileName, memoryStream.ToArray(), ContentType.Parse(attachment.ContentType));
+                    }
+                }
+            }
+
+            emailMessage.Body = builder.ToMessageBody();
 
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {

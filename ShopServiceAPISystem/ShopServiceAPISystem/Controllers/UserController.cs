@@ -100,5 +100,21 @@ namespace ShopServiceAPISystem.Controllers
 
             return Ok("New password has been sent to your email.");
         }
+
+        [HttpPost]
+        [Route("SendEmail")]
+        public async Task<IActionResult> SendEmail(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            try
+            {
+                await _userService.SendEmailAsync(toEmail, subject, message, attachments);
+                return Ok("Email sent successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Failed to send email: {ex.Message}");
+            }
+        }
+
     }
 }

@@ -56,5 +56,10 @@ namespace Service
         {
             return _userRepository.ForgotPassword(email);
         }
+
+        public async Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            await _userRepository.SendEmailAsync(toEmail, subject, message, attachments);
+        }
     }
 }
