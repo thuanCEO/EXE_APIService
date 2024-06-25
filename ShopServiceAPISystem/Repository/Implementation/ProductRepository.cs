@@ -37,5 +37,9 @@ namespace Repository.Implementation
         {
             _dao.UpdateProduct(product);
         }
+        public int CountProducts(int? status = null)
+        {
+            return _dao.CountProducts(status);
+        }
     }
 }

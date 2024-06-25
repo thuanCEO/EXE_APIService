@@ -51,5 +51,9 @@ namespace Repository.Implementation
         {
             return await _dao.LoginGoogle(idToken);
         }
+        public int CountUsers(int? status = null)
+        {
+            return _dao.CountUsers(status);
+        }
     }
 }

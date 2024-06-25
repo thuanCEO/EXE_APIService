@@ -33,5 +33,9 @@ namespace Service
         {
             return _orderRepository.DeleteOrder(id);
         }
+        public int CountOrders(int? status = null)
+        {
+            return _orderRepository.CountOrders(status);
+        }
     }
 }

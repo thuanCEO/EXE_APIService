@@ -14,5 +14,6 @@ namespace Repository.Interfaces
         void DeleteUser(int id);
         string GenerateToken(User user);
         Task<User> LoginGoogle(string idToken);
+        int CountUsers(int? status = null);
     }
 }

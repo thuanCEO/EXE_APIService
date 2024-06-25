@@ -34,5 +34,9 @@ namespace Service
         {
             return _productRepository.DeleteProduct(id);
         }
+        public int CountProducts(int? status = null)
+        {
+            return _productRepository.CountProducts(status);
+        }
     }
 }

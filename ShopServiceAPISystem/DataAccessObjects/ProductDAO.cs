@@ -84,5 +84,13 @@ namespace DataAccessObjects
 
             return await task;
         }
+        public int CountProducts(int? status = null)
+        {
+            if (status.HasValue)
+            {
+                return _context.Products.Count(p => p.Status == status.Value);
+            }
+            return _context.Products.Count();
+        }
     }
 }

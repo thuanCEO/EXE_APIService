@@ -36,5 +36,9 @@ namespace Repository.Implementation
         {
             _dao.UpdateOrder(order);
         }
+        public int CountOrders(int? status = null)
+        {
+            return _dao.CountOrders(status);
+        }
     }
 }
