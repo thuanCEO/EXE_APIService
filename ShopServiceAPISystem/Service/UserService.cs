@@ -47,5 +47,9 @@ namespace Service
         {
             return await _userRepository.LoginGoogle(idToken);
         }
+        public int CountUsers(int? status = null)
+        {
+            return _userRepository.CountUsers(status);
+        }
     }
 }

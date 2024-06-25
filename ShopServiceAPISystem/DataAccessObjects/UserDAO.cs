@@ -169,5 +169,13 @@ namespace DataAccessObjects
                 throw new Exception("Invalid Google token", ex);
             }
         }
+        public int CountUsers(int? status = null)
+        {
+            if (status.HasValue)
+            {
+                return _context.Users.Count(u => u.Status == status.Value);
+            }
+            return _context.Users.Count();
+        }
     }
 }

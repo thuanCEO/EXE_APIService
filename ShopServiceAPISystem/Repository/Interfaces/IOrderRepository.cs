@@ -9,5 +9,6 @@ namespace Repository.Interfaces
         bool DeleteOrder(int id);
         List<Order> GetAllOrders();
         Order GetOrderById(int id);
+        int CountOrders(int? status = null);
     }
 }

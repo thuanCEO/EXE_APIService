@@ -62,5 +62,13 @@ namespace DataAccessObjects
                 .Include(x => x.OrderDetails).ThenInclude(x => x.Product)
                 .FirstOrDefault(x => x.Id == id);
         }
+        public int CountOrders(int? status = null)
+        {
+            if (status.HasValue)
+            {
+                return _context.Orders.Count(u => u.Status == status.Value);
+            }
+            return _context.Orders.Count();
+        }
     }
 }

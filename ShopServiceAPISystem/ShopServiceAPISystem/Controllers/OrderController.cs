@@ -65,5 +65,13 @@ namespace ShopServiceAPISystem.Controllers
                 return StatusCode(500, "Không tồn tại Id này");
 
         }
+
+        [HttpGet]
+        [Route("CountOrders")]
+        public IActionResult CountOrders(int? status)
+        {
+            int count = _orderService.CountOrders(status);
+            return Ok(count);
+        }
     }
 }

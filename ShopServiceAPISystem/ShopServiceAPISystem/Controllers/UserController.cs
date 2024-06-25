@@ -79,5 +79,13 @@ namespace ShopServiceAPISystem.Controllers
             User user = await _userService.LoginGoogle(idToken);
             return Ok(user);
         }
+
+        [HttpGet]
+        [Route("CountUsers")]
+        public IActionResult CountUsers(int? status)
+        {
+            int count = _userService.CountUsers(status);
+            return Ok(count);
+        }
     }
 }

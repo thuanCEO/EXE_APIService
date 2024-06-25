@@ -10,5 +10,6 @@ namespace Repository.Interfaces
         bool DeleteProduct(int id);
         List<Product> GetAllProducts();
         Product GetProductById(int id);
+        int CountProducts(int? status = null);
     }
 }
