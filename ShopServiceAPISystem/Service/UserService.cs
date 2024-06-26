@@ -47,5 +47,23 @@ namespace Service
         {
             return await _userRepository.LoginGoogle(idToken);
         }
+        public int CountUsers(int? status = null)
+        {
+            return _userRepository.CountUsers(status);
+        }
+
+        public Task<bool> ForgotPassword(string email)
+        {
+            return _userRepository.ForgotPassword(email);
+        }
+
+        public async Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            await _userRepository.SendEmailAsync(toEmail, subject, message, attachments);
+        }
+        public void UpdatePassword(int userId, string Password)
+        {
+            _userRepository.UpdatePassword(userId, Password);
+        }
     }
 }

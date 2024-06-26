@@ -51,5 +51,24 @@ namespace Repository.Implementation
         {
             return await _dao.LoginGoogle(idToken);
         }
+        public int CountUsers(int? status = null)
+        {
+            return _dao.CountUsers(status);
+        }
+
+        public Task<bool> ForgotPassword(string email)
+        {
+            return _dao.ForgotPassword(email);
+        }
+
+        public async Task SendEmailAsync(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            await _dao.SendEmailAsync(toEmail, subject, message, attachments);
+        }
+
+        public void UpdatePassword(int userId, string Password)
+        {
+            _dao.UpdatePassword(userId, Password);
+        }
     }
 }

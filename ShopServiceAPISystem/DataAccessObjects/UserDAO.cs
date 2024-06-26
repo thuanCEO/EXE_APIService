@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MimeKit;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -172,6 +173,82 @@ namespace DataAccessObjects
             {
                 // Xử lý lỗi nếu idToken không hợp lệ
                 throw new Exception("Invalid Google token", ex);
+            }
+        }
+        public int CountUsers(int? status = null)
+        {
+            if (status.HasValue)
+            {
+                return _context.Users.Count(u => u.Status == status.Value);
+            }
+            return _context.Users.Count();
+        }
+
+        public async Task<bool> ForgotPassword(string email)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                return false;
+            }
+
+            var newPassword = GenerateRandomPassword(); // Generate new plain text password
+            user.Password = newPassword; // Assign plain text password directly
+
+            _context.SaveChanges();
+
+            await SendEmailAsync(user.Email, "New Password", $"Your new password is: {newPassword}");
+            return true;
+        }
+
+
+        private string GenerateRandomPassword()
+        {
+            const string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(validChars, 8)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public async Task SendEmailAsync(string email, string subject, string message, List<IFormFile> attachments = null)
+        {
+            var emailMessage = new MimeMessage();
+            emailMessage.From.Add(new MailboxAddress("REALITY", "inreality0102@gmail.com")); // Thay "REALITY" và "inreality0102@gmail.com" bằng thông tin người gửi thực tế
+            emailMessage.To.Add(new MailboxAddress("", email));
+            emailMessage.Subject = subject;
+
+            var builder = new BodyBuilder();
+            builder.HtmlBody = message;
+
+            if (attachments != null && attachments.Count > 0)
+            {
+                foreach (var attachment in attachments)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await attachment.CopyToAsync(memoryStream);
+                        builder.Attachments.Add(attachment.FileName, memoryStream.ToArray(), ContentType.Parse(attachment.ContentType));
+                    }
+                }
+            }
+
+            emailMessage.Body = builder.ToMessageBody();
+
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                await client.ConnectAsync("smtp.gmail.com", 587, false); // SMTP server của Gmail
+                await client.AuthenticateAsync("inreality0102@gmail.com", "piyb xaeo jats mmip"); // Địa chỉ email và mật khẩu của bạn
+                await client.SendAsync(emailMessage);
+                await client.DisconnectAsync(true);
+            }
+        }
+        public void UpdatePassword(int userId, string Password)
+        {
+            var user = _context.Users.Find(userId);
+            if (user != null)
+            {
+                user.Password = Password;
+                _context.SaveChanges();
             }
         }
     }

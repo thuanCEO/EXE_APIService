@@ -79,5 +79,49 @@ namespace ShopServiceAPISystem.Controllers
             User user = await _userService.LoginGoogle(idToken);
             return Ok(user);
         }
+
+        [HttpGet]
+        [Route("CountUsers")]
+        public IActionResult CountUsers(int? status)
+        {
+            int count = _userService.CountUsers(status);
+            return Ok(count);
+        }
+
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            bool result = await _userService.ForgotPassword(email);
+            if (!result)
+            {
+                return NotFound("User with given email does not exist.");
+            }
+
+            return Ok("New password has been sent to your email.");
+        }
+
+        [HttpPost]
+        [Route("SendEmail")]
+        public async Task<IActionResult> SendEmail(string toEmail, string subject, string message, List<IFormFile> attachments = null)
+        {
+            try
+            {
+                await _userService.SendEmailAsync(toEmail, subject, message, attachments);
+                return Ok("Email sent successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Failed to send email: {ex.Message}");
+            }
+        }
+
+        [HttpPut]
+        [Route("UpdatePassword")]
+        public IActionResult UpdatePassword(int userId, string Password)
+        {
+            _userService.UpdatePassword(userId, Password);
+            return Ok("Password updated successfully.");
+        }
     }
 }
