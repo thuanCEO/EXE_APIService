@@ -24,6 +24,11 @@ namespace DataAccessObjects
 
         public void CreateUser(User user)
         {
+            bool usernameExists = _context.Users.Any(u => u.UserName == user.UserName);
+            if (usernameExists)
+            {
+                throw new Exception("Username bị trùng");
+            }
             user.Status = 1;
             user.RoleId = 3;
             _context.Users.Add(user);
