@@ -14,6 +14,8 @@ namespace DataAccessObjects
         public void CreateOrder(Order order, List<OrderDetail> listOrderDetail)
         {
             order.Status = 1;
+            order.CreatedDate = DateTime.Now;
+            order.IsPayment = false;
             _context.Orders.Add(order);
             _context.SaveChanges();
             foreach (OrderDetail detail in listOrderDetail)

@@ -1,4 +1,7 @@
-﻿namespace BusinessObjects.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace BusinessObjects.Models
 {
     public partial class Order
     {
@@ -13,6 +16,8 @@
         public double? TotalPrice { get; set; }
         public double? FinalPrice { get; set; }
         public string Address { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public bool? IsPayment { get; set; }
         public int? VoucherId { get; set; }
         public int? ShippingId { get; set; }
         public int? Status { get; set; }
