@@ -5,10 +5,9 @@ namespace DataAccessObjects
 {
     public class OrderDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
-        public OrderDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
+        public OrderDAO()
         {
-            _context = context;
         }
 
         public void CreateOrder(Order order, List<OrderDetail> listOrderDetail)

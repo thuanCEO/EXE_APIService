@@ -1,13 +1,13 @@
 using AutoMapper;
 using BusinessObjects.Models;
 using DataAccessObjects;
-using DTOs.ZaloPay.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Repository.Implementation;
 using Repository.Interfaces;
 using Service;
+using ShopServiceAPISystem.WebSocketMiddleware;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -33,7 +33,7 @@ namespace ShopServiceAPISystem
             {
                 options.AddDefaultPolicy(policyBuilder =>
                 {
-                    policyBuilder.WithOrigins("https://realityprint.vercel.app")
+                    policyBuilder.AllowAnyOrigin()
                                  .AllowAnyHeader()
                                  .AllowAnyMethod();
                 });
@@ -56,10 +56,6 @@ namespace ShopServiceAPISystem
             builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             builder.Services.AddScoped<OrderDetailService>();
 
-            // Database connection
-            string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext<bs6ow0djyzdo8teyhoz4Context>(options =>
-                options.UseMySQL(connectionString));
 
             // AutoMapper configuration
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -80,9 +76,6 @@ namespace ShopServiceAPISystem
                 };
             });
 
-            //payment
-            builder.Services.Configure<ZaloPayConfig>(
-                builder.Configuration.GetSection(ZaloPayConfig.ConfigName));
 
             var app = builder.Build();
 
@@ -104,7 +97,18 @@ namespace ShopServiceAPISystem
             app.UseAuthorization();
 
             app.MapControllers();
-
+            app.UseWebSockets();
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path == "/ws" && context.Request.Headers["Upgrade"] == "websocket")
+                {
+                    await WebSocketHandler.HandleWebSocket(context);
+                }
+                else
+                {
+                    await next();
+                }
+            });
             app.Run();
         }
     }
