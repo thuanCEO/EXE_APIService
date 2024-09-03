@@ -100,7 +100,7 @@ namespace ShopServiceAPISystem
             app.UseWebSockets();
             app.Use(async (context, next) =>
             {
-                if (context.Request.Path == "/ws" && context.Request.Headers["Upgrade"] == "websocket")
+                if (context.Request.Path == "/ws")
                 {
                     await WebSocketHandler.HandleWebSocket(context);
                 }

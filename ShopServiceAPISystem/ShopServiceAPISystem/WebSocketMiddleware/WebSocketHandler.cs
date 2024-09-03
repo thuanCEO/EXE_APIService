@@ -49,23 +49,27 @@ namespace ShopServiceAPISystem.WebSocketMiddleware
 
         private static async Task HandleMessage(string message, WebSocket senderSocket)
         {
-            var chatMessage = JsonConvert.DeserializeObject<ChatMessage>(message);
-            _context = new bs6ow0djyzdo8teyhoz4Context();
-            // Save message to database
-            if (_context != null)
-            {
-                chatMessage.Timestamp = DateTime.Now;
-                _context.ChatMessages.Add(chatMessage);
-                await _context.SaveChangesAsync();
-            }
+            var acknowledgment = "Message received: "+ message;
+            var acknowledgmentBytes = Encoding.UTF8.GetBytes(acknowledgment);
+            await senderSocket.SendAsync(new ArraySegment<byte>(acknowledgmentBytes), WebSocketMessageType.Text, true, CancellationToken.None);
 
-            // Send message to receiver
-            var receiverSocket = _sockets.FirstOrDefault(x => x.Key == chatMessage.ReceiverId.ToString()).Value;
-            if (receiverSocket != null)
-            {
-                var messageBytes = Encoding.UTF8.GetBytes(message);
-                await receiverSocket.SendAsync(new ArraySegment<byte>(messageBytes), WebSocketMessageType.Text, true, CancellationToken.None);
-            }
+            //var chatMessage = JsonConvert.DeserializeObject<ChatMessage>(message);
+            //_context = new bs6ow0djyzdo8teyhoz4Context();
+            //// Save message to database
+            //if (_context != null)
+            //{
+            //    chatMessage.Timestamp = DateTime.Now;
+            //    _context.ChatMessages.Add(chatMessage);
+            //    await _context.SaveChangesAsync();
+            //}
+
+            //// Send message to receiver
+            //var receiverSocket = _sockets.FirstOrDefault(x => x.Key == chatMessage.ReceiverId.ToString()).Value;
+            //if (receiverSocket != null)
+            //{
+            //    var messageBytes = Encoding.UTF8.GetBytes(message);
+            //    await receiverSocket.SendAsync(new ArraySegment<byte>(messageBytes), WebSocketMessageType.Text, true, CancellationToken.None);
+            //}
         }
     }
 }
