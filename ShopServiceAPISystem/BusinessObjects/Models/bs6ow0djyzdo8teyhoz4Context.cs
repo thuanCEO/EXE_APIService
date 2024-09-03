@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace BusinessObjects.Models
 {
@@ -20,6 +21,7 @@ namespace BusinessObjects.Models
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<CartProduct> CartProducts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<ChatMessage> ChatMessages { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -36,8 +38,16 @@ namespace BusinessObjects.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySQL("Server=bs6ow0djyzdo8teyhoz4-mysql.services.clever-cloud.com;Uid=umt8qsls0erkt8ew;Pwd=SofegWccn2jSVc6m15Kl;Database=bs6ow0djyzdo8teyhoz4");
+                optionsBuilder.UseMySQL(GetConnectionStrings());
             }
+        }
+        private string GetConnectionStrings()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+            return configuration.GetConnectionString("DefaultConnection");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -106,6 +116,33 @@ namespace BusinessObjects.Models
                 entity.Property(e => e.Description).HasMaxLength(255);
 
                 entity.Property(e => e.Title).HasMaxLength(1000);
+            });
+
+            modelBuilder.Entity<ChatMessage>(entity =>
+            {
+                entity.ToTable("ChatMessage");
+
+                entity.HasIndex(e => e.ReceiverId, "ReceiverId");
+
+                entity.HasIndex(e => e.SenderId, "SenderId");
+
+                entity.Property(e => e.Message)
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                entity.Property(e => e.Timestamp).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Receiver)
+                    .WithMany(p => p.ChatMessageReceivers)
+                    .HasForeignKey(d => d.ReceiverId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("ChatMessage_ibfk_2");
+
+                entity.HasOne(d => d.Sender)
+                    .WithMany(p => p.ChatMessageSenders)
+                    .HasForeignKey(d => d.SenderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("ChatMessage_ibfk_1");
             });
 
             modelBuilder.Entity<Feedback>(entity =>

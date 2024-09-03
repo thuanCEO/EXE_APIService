@@ -27,6 +27,7 @@ D:\hoc_tap\Ki_8\exe201\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\D
 D:\hoc_tap\Ki_8\exe201\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
 D:\hoc_tap\Ki_8\exe201\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
 D:\hoc_tap\Ki_8\exe201\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll
+<<<<<<< HEAD
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.deps.json
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.runtimeconfig.json
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\bin\Debug\net6.0\BusinessObjects.dll
@@ -42,3 +43,6 @@ D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
 D:\FPT-CN8\EXE202\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll
+=======
+D:\hoc_tap\Ki_8\exe201\EXE_APIService\ShopServiceAPISystem\BusinessObjects\obj\Debug\net6.0\BusinessObjects.sourcelink.json
+>>>>>>> quangcode

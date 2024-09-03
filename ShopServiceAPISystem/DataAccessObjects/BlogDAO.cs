@@ -5,10 +5,9 @@ namespace DataAccessObjects
 {
     public class BlogDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
-        public BlogDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
+        public BlogDAO()
         {
-            _context = context;
         }
 
         public void CreateBlog(Blog blog)

@@ -9,6 +9,8 @@ namespace BusinessObjects.Models
         {
             Blogs = new HashSet<Blog>();
             Carts = new HashSet<Cart>();
+            ChatMessageReceivers = new HashSet<ChatMessage>();
+            ChatMessageSenders = new HashSet<ChatMessage>();
             Feedbacks = new HashSet<Feedback>();
             Orders = new HashSet<Order>();
         }
@@ -27,6 +29,8 @@ namespace BusinessObjects.Models
         public virtual Role Role { get; set; }
         public virtual ICollection<Blog> Blogs { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<ChatMessage> ChatMessageReceivers { get; set; }
+        public virtual ICollection<ChatMessage> ChatMessageSenders { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }

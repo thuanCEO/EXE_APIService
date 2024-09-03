@@ -15,11 +15,10 @@ namespace DataAccessObjects
 {
     public class UserDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
         private readonly IConfiguration _configuration;
-        public UserDAO(bs6ow0djyzdo8teyhoz4Context context, IConfiguration configuration)
+        public UserDAO(IConfiguration configuration)
         {
-            _context = context;
             _configuration = configuration;
         }
 

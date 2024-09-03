@@ -9,12 +9,11 @@ namespace DataAccessObjects
 {
     public class ProductDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
         private readonly IConfiguration _configuration;
 
-        public ProductDAO(bs6ow0djyzdo8teyhoz4Context context, IConfiguration configuration)
+        public ProductDAO( IConfiguration configuration)
         {
-            _context = context;
             _configuration = configuration;
         }
 

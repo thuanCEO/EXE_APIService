@@ -1,7 +1,4 @@
 ﻿using DTOs.Update;
-using DTOs.ZaloPay.Config;
-using DTOs.ZaloPay.Request;
-using DTOs.ZaloPay.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -18,55 +15,10 @@ namespace ShopServiceAPISystem.Controllers
         private readonly string key1 = "PcY4iZIKFCIdgZvA6ueMcMHHUbRLYjPL";
         private readonly string create_order_url = "https://sb-openapi.zalopay.vn/v2/create";
         private readonly string redirectUrl = "https://localhost:7170/api/Product/GetAllProducts";
-        private readonly ZaloPayConfig _zaloPayConfig;
-        public PaymentController(IOptions<ZaloPayConfig> zaloPayConfig)
+        public PaymentController()
         {
-            _zaloPayConfig = zaloPayConfig.Value;
         }
-        [HttpPost]
-        [Route("CreatePayment")]
-        public IActionResult CreatePayment([FromBody] CreatePaymentRequestModel model)
-        {
-            try
-            {
-                // Thực hiện các kiểm tra và xử lý trước khi gửi yêu cầu thanh toán
-
-                // Tạo một đối tượng CreateZaloPayPayRequest
-                var request = new CreateZaloPayPayRequest(
-                    _zaloPayConfig.AppId,
-                    _zaloPayConfig.AppUser,
-                    model.AppTransId,
-                    model.AppTime,
-                    model.Amount,
-                    model.Description,
-                    model.EmbedData,
-                    "zalopayapp",
-                    "");
-
-                // Tạo chữ ký cho yêu cầu
-                request.MakeSignature(_zaloPayConfig.Key1);
-
-                // Gửi yêu cầu đến cổng thanh toán ZaloPay
-                var response = request.GetLink(_zaloPayConfig.PaymentUrl);
-
-                // Xử lý phản hồi từ cổng thanh toán
-                if (response.Item1)
-                {
-                    // Giao dịch thành công, response.Item2 chứa URL đơn hàng
-                    return Ok(new CreateZaloPayPayResponse { ReturnCode = 1, OrderUrl = response.Item2 });
-                }
-                else
-                {
-                    // Xử lý lỗi, response.Item2 chứa thông điệp lỗi
-                    return BadRequest(new CreateZaloPayPayResponse { ReturnCode = 0, ReturnMessage = response.Item2 });
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý các ngoại lệ
-                return StatusCode(500, new CreateZaloPayPayResponse { ReturnCode = 0, ReturnMessage = "Internal server error" });
-            }
-        }
+       
 
         [HttpPost("CreateOrder")]
         public async Task<IActionResult> CreateOrder([FromBody] UpdateOrderDTO orderDto)
