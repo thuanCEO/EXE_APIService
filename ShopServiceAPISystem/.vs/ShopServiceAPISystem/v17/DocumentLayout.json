@@ -7,16 +7,88 @@
       "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\shopserviceapisystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\shopserviceapisystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\controllers\\shippingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\controllers\\shippingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\voucherdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\voucherdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\shippingdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\shippingdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\feedbackdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\feedbackdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\cartproductdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\cartproductdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\cartdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\cartdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\blogdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\blogdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\controllers\\callbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\controllers\\callbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dtos\\create\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|solutionrelative:dtos\\create\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dtos\\create\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F65BE3B9-F1AD-4662-A153-6C761B413F36}|DTOs\\DTOs.csproj|solutionrelative:dtos\\create\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD19FAFF-ADDA-4CC2-89BE-9F2E403909AA}|DataAccessObjects\\DataAccessObjects.csproj|solutionrelative:dataaccessobjects\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|d:\\hoc_tap\\ki_8\\exe201\\exe_apiservice\\shopserviceapisystem\\shopserviceapisystem\\shopserviceapisystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D8AA3512-F450-482A-8D56-1129BD157C63}|ShopServiceAPISystem\\ShopServiceAPISystem.csproj|solutionrelative:shopserviceapisystem\\shopserviceapisystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\ProductDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -65,7 +137,252 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShippingController.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\ShippingController.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Controllers\\ShippingController.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\ShippingController.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Controllers\\ShippingController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T09:13:46.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\ProductDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ProductDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\ProductDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:39.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderDetailDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\OrderDetailDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\OrderDetailDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\OrderDetailDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\OrderDetailDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:38.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Program.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Program.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAAADsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:12:35.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwC0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:34.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\UserDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\UserDAO.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAADwvzsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:17:40.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServiceDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ServiceDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\ServiceDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ServiceDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\ServiceDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:40.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShippingDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ShippingDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\ShippingDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\ShippingDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\ShippingDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:49.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VoucherDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\VoucherDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\VoucherDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\VoucherDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\VoucherDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:09:00.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FeedbackDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\FeedbackDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\FeedbackDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\FeedbackDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\FeedbackDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:28.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CategoryDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CategoryDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\CategoryDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CategoryDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\CategoryDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:22.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartProductDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CartProductDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\CartProductDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CartProductDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\CartProductDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:08:14.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CallbackController.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\CallbackController.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Controllers\\CallbackController.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\CallbackController.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Controllers\\CallbackController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:56.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CartDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CartDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\CartDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\CartDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\CartDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:43.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\OrderDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\OrderDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\OrderDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\OrderDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:06:33.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Controllers\\BlogController.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Controllers\\BlogController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:54.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BlogDAO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\BlogDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObjects\\BlogDAO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\BlogDAO.cs",
+              "RelativeToolTip": "DataAccessObjects\\BlogDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:39.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateBlogDTO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\Create\\CreateBlogDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\Create\\CreateBlogDTO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\Create\\CreateBlogDTO.cs",
+              "RelativeToolTip": "DTOs\\Create\\CreateBlogDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:36.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateOrderDetailDTO.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\Create\\CreateOrderDetailDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\Create\\CreateOrderDetailDTO.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\Create\\CreateOrderDetailDTO.cs",
+              "RelativeToolTip": "DTOs\\Create\\CreateOrderDetailDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:36.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VoucherController.cs",
+              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\VoucherController.cs",
+              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Controllers\\VoucherController.cs",
+              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Controllers\\VoucherController.cs",
+              "RelativeToolTip": "ShopServiceAPISystem\\Controllers\\VoucherController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T09:07:33.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ShopServiceAPISystem.csproj",
               "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
               "RelativeDocumentMoniker": "ShopServiceAPISystem\\ShopServiceAPISystem.csproj",
@@ -77,19 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserDAO.cs",
-              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
-              "RelativeDocumentMoniker": "DataAccessObjects\\UserDAO.cs",
-              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\DataAccessObjects\\UserDAO.cs",
-              "RelativeToolTip": "DataAccessObjects\\UserDAO.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAkwDsAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T04:17:40.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 22,
               "Title": "ProductDTO.cs",
               "DocumentMoniker": "D:\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\ProductDTO.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\FPT\\EXE101_201\\FE\\EXE_APIService\\ShopServiceAPISystem\\DTOs\\ProductDTO.cs",
@@ -101,20 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
-              "RelativeDocumentMoniker": "ShopServiceAPISystem\\Program.cs",
-              "ToolTip": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\Program.cs",
-              "RelativeToolTip": "ShopServiceAPISystem\\Program.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAkwIgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T04:12:35.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\hoc_tap\\Ki_8\\exe201\\EXE_APIService\\ShopServiceAPISystem\\ShopServiceAPISystem\\appsettings.json",
               "RelativeDocumentMoniker": "ShopServiceAPISystem\\appsettings.json",

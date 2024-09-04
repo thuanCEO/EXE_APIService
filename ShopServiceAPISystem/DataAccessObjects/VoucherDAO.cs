@@ -7,11 +7,9 @@ namespace DataAccessObjects
 {
     public class VoucherDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
-
-        public VoucherDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
+        public VoucherDAO()
         {
-            _context = context;
         }
 
         public void CreateVoucher(Voucher voucher)

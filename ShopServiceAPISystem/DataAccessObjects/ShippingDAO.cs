@@ -7,11 +7,9 @@ namespace DataAccessObjects
 {
     public class ShippingDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
-
-        public ShippingDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
+        public ShippingDAO()
         {
-            _context = context;
         }
 
         public void CreateShipping(Shipping shipping)

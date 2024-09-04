@@ -7,11 +7,10 @@ namespace DataAccessObjects
 {
     public class CartDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
 
-        public CartDAO(bs6ow0djyzdo8teyhoz4Context context)
+        public CartDAO()
         {
-            _context = context;
         }
 
         public void CreateCart(Cart cart)

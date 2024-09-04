@@ -7,11 +7,9 @@ namespace DataAccessObjects
 {
     public class CategoryDAO
     {
-        private readonly bs6ow0djyzdo8teyhoz4Context _context;
-
-        public CategoryDAO(bs6ow0djyzdo8teyhoz4Context context)
+        private readonly bs6ow0djyzdo8teyhoz4Context _context = new bs6ow0djyzdo8teyhoz4Context();
+        public CategoryDAO()
         {
-            _context = context;
         }
 
         public void CreateCategory(Category category)
